@@ -1831,6 +1831,12 @@
 		(color 0 0 0 0)
 		(uuid "e53d6f6a-0833-49d7-abd4-f740071e554c")
 	)
+	(junction
+		(at 213.36 17.78)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e9f548b4-0096-465b-abb9-ff2453f33987")
+	)
 	(no_connect
 		(at 256.54 128.27)
 		(uuid "6ccd2b9d-a0e8-4ed2-9eed-7668fb5cd1f0")
@@ -2011,6 +2017,16 @@
 	)
 	(wire
 		(pts
+			(xy 237.49 30.48) (xy 237.49 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "34d50942-806e-4fd4-800a-1051a79b3d61")
+	)
+	(wire
+		(pts
 			(xy 231.14 63.5) (xy 231.14 55.88)
 		)
 		(stroke
@@ -2018,6 +2034,16 @@
 			(type default)
 		)
 		(uuid "35062358-6206-44df-a892-d6c45ece4af0")
+	)
+	(wire
+		(pts
+			(xy 243.84 30.48) (xy 237.49 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "35d09d22-e94c-4fa7-9dd1-1e4c7de94334")
 	)
 	(wire
 		(pts
@@ -2171,7 +2197,7 @@
 	)
 	(wire
 		(pts
-			(xy 213.36 17.78) (xy 181.61 17.78)
+			(xy 181.61 17.78) (xy 213.36 17.78)
 		)
 		(stroke
 			(width 0)
@@ -2278,6 +2304,16 @@
 			(type default)
 		)
 		(uuid "73d2b479-ed6e-4ff6-b53b-1b390b37c3ab")
+	)
+	(wire
+		(pts
+			(xy 181.61 43.18) (xy 181.61 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "749c4600-4d9f-4660-989c-c3737ce80b9d")
 	)
 	(wire
 		(pts
@@ -2631,6 +2667,16 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 69.85) (xy 173.99 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2cd0467-daf5-4e98-9cfa-2350aaa868a9")
+	)
+	(wire
+		(pts
 			(xy 256.54 123.19) (xy 265.43 123.19)
 		)
 		(stroke
@@ -2651,6 +2697,16 @@
 	)
 	(wire
 		(pts
+			(xy 236.22 26.67) (xy 243.84 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c97040a6-1b57-4ae5-a7df-18d7ae13765f")
+	)
+	(wire
+		(pts
 			(xy 36.83 53.34) (xy 36.83 58.42)
 		)
 		(stroke
@@ -2668,6 +2724,16 @@
 			(type default)
 		)
 		(uuid "cbd844f1-5df3-4db1-8c9e-0e7878ea9d80")
+	)
+	(wire
+		(pts
+			(xy 238.76 21.59) (xy 238.76 17.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cd15b6d9-37a1-48cd-9879-fcbbc4114b40")
 	)
 	(wire
 		(pts
@@ -2708,6 +2774,16 @@
 			(type default)
 		)
 		(uuid "d1987aaa-432c-4da9-b7de-6109469944e0")
+	)
+	(wire
+		(pts
+			(xy 236.22 25.4) (xy 236.22 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2bdb099-ba9f-42d8-a8d8-7746c736ca07")
 	)
 	(wire
 		(pts
@@ -2761,6 +2837,16 @@
 	)
 	(wire
 		(pts
+			(xy 243.84 21.59) (xy 238.76 21.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e40fb5e2-1a5c-440e-90bd-a339a8066c3c")
+	)
+	(wire
+		(pts
 			(xy 231.14 71.12) (xy 231.14 90.17)
 		)
 		(stroke
@@ -2798,6 +2884,26 @@
 			(type default)
 		)
 		(uuid "ebb2de3f-aa95-4a59-9be9-f4334edcfee9")
+	)
+	(wire
+		(pts
+			(xy 237.49 43.18) (xy 181.61 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef24e4bc-7b11-420e-ac9a-d51d99b7736f")
+	)
+	(wire
+		(pts
+			(xy 213.36 17.78) (xy 238.76 17.78)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ef363948-190e-4691-a022-445039b16bdb")
 	)
 	(wire
 		(pts
@@ -2848,6 +2954,16 @@
 			(type default)
 		)
 		(uuid "fdebfa5d-9801-4768-83fb-7185e1e74fd6")
+	)
+	(text "LED"
+		(exclude_from_sim no)
+		(at 245.618 37.846 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "0bcf5c08-871c-44f6-aafd-fad66d5392b8")
 	)
 	(text "button"
 		(exclude_from_sim no)
@@ -3230,6 +3346,71 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
+		(at 248.92 26.67 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0ac894f7-ab13-4e3e-8c6d-b9214381d4fb")
+		(property "Reference" "DI14"
+			(at 251.46 26.416 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01_Pin"
+			(at 248.285 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 248.92 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a252429f-0102-4b00-b9ef-19560f89b48a")
+		)
+		(instances
+			(project "colorsorter_schematic"
+				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
+					(reference "DI14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Pin")
 		(at 27.94 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3288,6 +3469,71 @@
 			(project "colorsorter_schematic"
 				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
 					(reference "DI6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Pin")
+		(at 248.92 30.48 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1365eeb6-1c46-4e70-879a-0194a17191a1")
+		(property "Reference" "DI15"
+			(at 251.46 30.226 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01_Pin"
+			(at 248.285 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 248.92 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "318e1c70-6578-4a16-ad81-4e68b8efe77f")
+		)
+		(instances
+			(project "colorsorter_schematic"
+				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
+					(reference "DI15")
 					(unit 1)
 				)
 			)
@@ -5588,6 +5834,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:VCC")
+		(at 236.22 25.4 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a07a7b2b-77ad-44f8-87fd-d4cab71d7413")
+		(property "Reference" "#PWR016"
+			(at 236.22 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 236.22 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 236.22 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 236.22 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 236.22 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "28fbd212-9189-461e-a889-58aee6fdff9a")
+		)
+		(instances
+			(project "colorsorter_schematic"
+				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
 		(at 191.77 34.29 180)
 		(unit 1)
@@ -6316,6 +6628,71 @@
 			(project "colorsorter_schematic"
 				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
 					(reference "SDA1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x01_Pin")
+		(at 248.92 21.59 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e0c1d88c-7bbe-469d-8b9f-c4969000f565")
+		(property "Reference" "DI13"
+			(at 251.46 21.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01_Pin"
+			(at 248.285 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 248.92 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 248.92 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 248.92 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "dcf3932f-16de-46c1-82e1-ebbcfb740943")
+		)
+		(instances
+			(project "colorsorter_schematic"
+				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
+					(reference "DI13")
 					(unit 1)
 				)
 			)
