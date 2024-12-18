@@ -2079,16 +2079,6 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 29.21) (xy 186.69 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3966aee0-5f61-4fd6-b1f5-71ede60e23ff")
-	)
-	(wire
-		(pts
 			(xy 171.45 97.79) (xy 171.45 96.52)
 		)
 		(stroke
@@ -2299,6 +2289,16 @@
 	)
 	(wire
 		(pts
+			(xy 233.68 72.39) (xy 234.95 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "720259f1-64ad-44be-a7f5-56bf170cfea2")
+	)
+	(wire
+		(pts
 			(xy 33.02 96.52) (xy 35.56 96.52)
 		)
 		(stroke
@@ -2419,7 +2419,7 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 27.94) (xy 163.83 29.21)
+			(xy 175.26 27.94) (xy 175.26 29.21)
 		)
 		(stroke
 			(width 0)
@@ -2486,6 +2486,16 @@
 			(type default)
 		)
 		(uuid "8bfe7d79-a871-4be9-a374-b17b4541a840")
+	)
+	(wire
+		(pts
+			(xy 233.68 67.31) (xy 233.68 72.39)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90ebec72-1ecd-4f9b-a29b-dd3b43cbb0b7")
 	)
 	(wire
 		(pts
@@ -2589,16 +2599,6 @@
 	)
 	(wire
 		(pts
-			(xy 163.83 29.21) (xy 172.72 29.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a56bf8c1-4239-4e1e-985e-57226f4841c9")
-	)
-	(wire
-		(pts
 			(xy 76.2 113.03) (xy 213.36 113.03)
 		)
 		(stroke
@@ -2696,6 +2696,16 @@
 			(type default)
 		)
 		(uuid "b6c901f2-177a-4bc3-99bf-8cea54651213")
+	)
+	(wire
+		(pts
+			(xy 175.26 29.21) (xy 186.69 29.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b748c3a3-2a07-459a-8385-cd524e4170cc")
 	)
 	(wire
 		(pts
@@ -3593,7 +3603,7 @@
 	)
 	(symbol
 		(lib_id "power:VCC")
-		(at 163.83 27.94 0)
+		(at 175.26 27.94 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3602,7 +3612,7 @@
 		(fields_autoplaced yes)
 		(uuid "1719c690-8a35-4281-892c-fa637f5bd7f7")
 		(property "Reference" "#PWR013"
-			(at 163.83 31.75 0)
+			(at 175.26 31.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3611,7 +3621,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 166.37 26.6699 0)
+			(at 177.8 26.6699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3620,7 +3630,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 163.83 27.94 0)
+			(at 175.26 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3629,7 +3639,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 163.83 27.94 0)
+			(at 175.26 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3638,7 +3648,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 163.83 27.94 0)
+			(at 175.26 27.94 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4023,7 +4033,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2b9ab4d5-b19f-40e7-9bb9-f5baade41389")
-		(property "Reference" "VDD1"
+		(property "Reference" "+3.3V"
 			(at 252.095 77.47 0)
 			(effects
 				(font
@@ -4073,7 +4083,7 @@
 		(instances
 			(project "colorsorter_schematic"
 				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
-					(reference "VDD1")
+					(reference "+3.3V")
 					(unit 1)
 				)
 			)
@@ -5679,74 +5689,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 176.53 29.21 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8fdfd8ba-a357-4d52-bdfa-d1b2f4816581")
-		(property "Reference" "R8"
-			(at 176.53 22.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 176.53 25.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 176.53 27.432 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 176.53 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 176.53 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1d495217-73ad-4757-b21a-e9f9624f3852")
-		)
-		(pin "1"
-			(uuid "bb3585b5-ce46-4140-9042-0bf35bfeaf27")
-		)
-		(instances
-			(project "colorsorter_schematic"
-				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector:Conn_01x01_Pin")
 		(at 226.06 34.29 180)
 		(unit 1)
@@ -6809,6 +6751,71 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Conn_01x01_Pin")
+		(at 240.03 72.39 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e4b4c330-c056-441c-b304-c1a3877f2318")
+		(property "Reference" "+5V"
+			(at 242.57 72.136 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x01_Pin"
+			(at 239.395 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.03 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated"
+			(at 240.03 72.39 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "89213afc-d138-4eaf-8a65-a683f1ab2760")
+		)
+		(instances
+			(project "colorsorter_schematic"
+				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
+					(reference "+5V")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 57.15 87.63 0)
 		(unit 1)
@@ -6873,6 +6880,72 @@
 			(project ""
 				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
 					(reference "C5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:VCC")
+		(at 233.68 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "eb0313a5-cb80-4c58-b106-16525b2d7c72")
+		(property "Reference" "#PWR021"
+			(at 233.68 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 233.68 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 233.68 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 233.68 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"VCC\""
+			(at 233.68 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc3a7c82-b0e8-4ea6-97cb-662fc17a0d8e")
+		)
+		(instances
+			(project ""
+				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
+					(reference "#PWR021")
 					(unit 1)
 				)
 			)
