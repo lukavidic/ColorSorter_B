@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "ERJ-P06D3300V"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2021-05-04-15:09:17)
+    (mountForm default
+        (footprintRef "ERJP06D1000V")
+        (spec "System")
+    )
+)

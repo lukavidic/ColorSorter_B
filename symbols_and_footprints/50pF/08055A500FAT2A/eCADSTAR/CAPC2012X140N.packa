@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "08055A500FAT2A"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2024-04-24-16:00:59)
+    (mountForm default
+        (footprintRef "CAPC2012X140N")
+        (spec "System")
+    )
+)

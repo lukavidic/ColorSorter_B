@@ -1,0 +1,9 @@
+Manufacturer=Kyocera AVX
+PartNumber=08055A500FAT2A
+PartCategory=Capacitor
+PackageCategory=Capacitor Chip Non-polarised
+PinCount=2
+Version=1.1
+Released=2024-07-04 03:19:04
+Downloaded=2024-12-24 14:22:21
+3D=Y

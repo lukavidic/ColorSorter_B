@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "ERJP06D1000V"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "ERJP06D1000V")
+        (spec "default")
+    )
+)

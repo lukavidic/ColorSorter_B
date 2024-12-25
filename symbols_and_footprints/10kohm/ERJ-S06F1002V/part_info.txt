@@ -1,0 +1,9 @@
+Manufacturer=Panasonic
+PartNumber=ERJ-S06F1002V
+PartCategory=Resistor
+PackageCategory=Resistor Chip
+PinCount=2
+Version=3.1
+Released=2023-03-07 11:22:42
+Downloaded=2024-12-24 13:53:30
+3D=Y

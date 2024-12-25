@@ -1,0 +1,68 @@
+(Japanese_coding: sjis)
+(function "ECS_183236"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2023-03-07-09:18:00)
+    (utime 2023-03-07-09:18:00)
+    (interface
+        (port "1" (symbPinId 1) (portType INOUT))
+        (port "2" (symbPinId 2) (portType INOUT))
+    )
+    (property "symbolName" "293D106X9010C2TE3")
+)
+
+
+(pinAssign "ECS_183236"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2023-03-07-09:18:00)
+    (utime 2023-03-07-09:18:00)
+    (interface
+        (port "1" (symbPinId 1) (portName "+") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "-") (portType INOUT))
+    )
+    (internal
+        (funcInst (functionRef "ECS_183236")
+                (port "1" (match "1"))
+                (port "2" (match "2"))
+        )
+    )
+    (property "usePowerBox" "No")
+    (property "symbolName" "293D106X9010C2TE3")
+)
+
+
+(part "293D106X9010C2TE3"
+    (uver 1)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (ctime 2023-03-07-09:18:00)
+    (utime 2023-03-07-09:18:00)
+    (packageRef "293D106X9010C2TE3")
+    (pinAssignRef "ECS_183236")
+    (interface
+        (port "1" (symbPinId 1) (portName "+") (portType INOUT))
+        (port "2" (symbPinId 2) (portName "-") (portType INOUT))
+    )
+    (partClass UNDEF)
+    (useInSchema Y)
+    (useInLayout Y)
+    (inPartsList Y)
+    (partType NORMAL)
+    (placeRestriction FREE)
+    (property "enetNonSeries" "NO")
+    (property "refDesPrefix" "C")
+    (property "description" "Solid Tantalum Surface Mount Chip Capacitors TANTAMOUNT(TM), Molded Case, Standard Industrial Grade")
+    (property "Manufacturer_Name" "Vishay")
+    (property "Manufacturer_Part_Number" "293D106X9010C2TE3")
+    (property "Mouser_Part_Number" "74-293D106X9010C2TE3")
+    (property "Mouser_Price/Stock" "https://www.mouser.co.uk/ProductDetail/Vishay-Sprague/293D106X9010C2TE3?qs=Fp01vWGAG3pfp%2FN4ElsWcw%3D%3D")
+    (property "Arrow_Part_Number" "293D106X9010C2TE3")
+    (property "Arrow_Price/Stock" "https://www.arrow.com/en/products/293d106x9010c2te3/vishay")
+    (property "Datasheet_Link" "http://www.vishay.com/docs/40002/293d.pdf")
+    (property "compAreaTopHeight" 2.8)
+)
+
+

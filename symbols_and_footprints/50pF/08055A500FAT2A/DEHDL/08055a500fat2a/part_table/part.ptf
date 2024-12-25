@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART '08055A500FAT2A'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Kyocera AVX", "08055A500FAT2A" (!) = "", "CAPC2012X140N", "Capacitor Chip Non-polarised", "581-08055A500FAT2A", "https://www.mouser.co.uk/ProductDetail/KYOCERA-AVX/08055A500FAT2A?qs=ykEKLGTiBczMLr9%2FFQxHGw%3D%3D", "08055A500FAT2A", "null?region=nac", "50 pF +/-1% 50V Ceramic Capacitor C0G, NP0 0805 (2012 Metric)", "https://datasheets.kyocera-avx.com/C0GNP0-Dielectric.pdf", "1.4 mm"
+END_PART
+
+END.

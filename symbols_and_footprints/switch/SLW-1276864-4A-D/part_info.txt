@@ -1,0 +1,9 @@
+Manufacturer=Same Sky
+PartNumber=SLW-1276864-4A-D
+PartCategory=Switch
+PackageCategory=Other
+PinCount=3
+Version=3.5
+Released=2023-11-07 10:48:10
+Downloaded=2024-12-24 13:58:06
+3D=Y

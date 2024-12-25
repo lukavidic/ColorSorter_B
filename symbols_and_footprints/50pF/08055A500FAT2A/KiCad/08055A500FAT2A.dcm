@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 08055A500FAT2A
+D 50 pF +/-1% 50V Ceramic Capacitor C0G, NP0 0805 (2012 Metric)
+K
+F https://datasheets.kyocera-avx.com/C0GNP0-Dielectric.pdf
+$ENDCMP
+#
+#End Doc Library

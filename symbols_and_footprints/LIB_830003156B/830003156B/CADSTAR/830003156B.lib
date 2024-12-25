@@ -1,0 +1,18 @@
+.830003156B :1 ;Crystals WE-XTAL 8.0MHz 50ppm 11.05 x 4.7mm
+"830003156B"
+*STM Y
+*NGS
+*PLB 1="CRYSTAL_1" 2="CRYSTAL_2"
+*MXP 2
+*DFN 830003156B
+~!Manufacturer_Name (Wurth Elektronik)
+~!Manufacturer_Part_Number (830003156B)
+~!Mouser Part Number (710-830003156B)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/830003156B?qs=2WXlatMagcHnVMrUSWOG9g%3D%3D)
+~!Arrow Part Number (-)
+~!Arrow Price/Stock (-)
+~!Link Datasheet (https://www.we-online.com/catalog/datasheet/830003156B.pdf)
+~!Height (4.1mm)
+~!3D_Model (830003156B)
+"830003156B"
+1.1!U 2.1!U 

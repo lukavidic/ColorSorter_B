@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP M20-7830446
+D M20 Socket,Dil,Vertical,2X4W,2.54Mm HARWIN 2.54mm 8 Way 2 Row Straight PCB Socket Through Hole Socket Strip
+K
+F https://cdn.harwin.com/pdfs/M20-783.pdf
+$ENDCMP
+#
+#End Doc Library

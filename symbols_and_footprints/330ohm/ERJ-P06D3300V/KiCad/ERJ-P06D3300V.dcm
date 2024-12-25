@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ERJ-P06D3300V
+D Thick Film Resistors - SMD 0805 330ohms 0.5W 0.5% AEC-Q200
+K
+F http://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C102.pdf
+$ENDCMP
+#
+#End Doc Library

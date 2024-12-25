@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'M20_7830446'
+CLASS = IO
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "ARROW_PART_NUMBER", "ARROW_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Harwin", "M20-7830446" (!) = "", "RHDR8W70P254X254_2X4_1056X500X865P", "Header, Receptacle - Straight PTH Box", "855-M20-7830446", "https://www.mouser.co.uk/ProductDetail/Harwin/M20-7830446?qs=vF78I%252BjhbY%2FEi6Q%2F1EBREA%3D%3D", "", "", "M20 Socket,Dil,Vertical,2X4W,2.54Mm HARWIN 2.54mm 8 Way 2 Row Straight PCB Socket Through Hole Socket Strip", "https://cdn.harwin.com/pdfs/M20-783.pdf", "8.65 mm"
+END_PART
+
+END.

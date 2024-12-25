@@ -1,0 +1,18 @@
+.08055A500FAT2A :1 ;50 pF +/-1% 50V Ceramic Capacitor C0G, NP0 0805 (2012 Metric)
+CAPC2012X140N
+*STM C
+*NGS
+*PLB 1="1" 2="2"
+*MXP 2
+*DFN 08055A500FAT2A
+~!Manufacturer_Name (Kyocera AVX)
+~!Manufacturer_Part_Number (08055A500FAT2A)
+~!Mouser Part Number (581-08055A500FAT2A)
+~!Link Mouser Price/Stock (https://www.mouser.co.uk/ProductDetail/KYOCERA-AVX/08055A500FAT2A?qs=ykEKLGTiBczMLr9%2FFQxHGw%3D%3D)
+~!Arrow Part Number (08055A500FAT2A)
+~!Link Arrow Price/Stock (null?region=nac)
+~!Link Datasheet (https://datasheets.kyocera-avx.com/C0GNP0-Dielectric.pdf)
+~!Height (1.4mm)
+~!3D_Model (08055A500FAT2A)
+"08055A500FAT2A"
+1.1!U 2.1!U 
