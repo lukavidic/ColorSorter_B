@@ -1,4 +1,4 @@
-(footprint "XCVR_ESP8266-01_ESP-01"
+(footprint "wifi"
 	(version 20240108)
 	(generator "pcbnew")
 	(generator_version "8.0")
@@ -14,7 +14,7 @@
 			)
 		)
 	)
-	(property "Value" "XCVR_ESP8266-01_ESP-01"
+	(property "Value" "wifi"
 		(at 6.41 14.235 0)
 		(layer "F.Fab")
 		(uuid "476f3b9e-fe2e-4ab7-b831-b06347fdbff1")

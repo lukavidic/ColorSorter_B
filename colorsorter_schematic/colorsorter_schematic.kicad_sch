@@ -3036,25 +3036,23 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "Y"
-				(at 8.89 6.35 0)
+			(property "Reference" "Y1"
+				(at 5.08 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
 			(property "Value" "830003156B"
-				(at 8.89 3.81 0)
+				(at 5.08 6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left top)
 				)
 			)
-			(property "Footprint" "830003156B"
+			(property "Footprint" "crystaloscillator:830003156B"
 				(at 8.89 -96.19 0)
 				(effects
 					(font
@@ -3216,14 +3214,14 @@
 				(pin passive line
 					(at 10.16 0 180)
 					(length 2.54)
-					(name ""
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number ""
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -6099,7 +6097,7 @@
 				)
 			)
 		)
-		(property "Footprint" "830003156B"
+		(property "Footprint" "crystaloscillator:830003156B"
 			(at 77.47 263.83 0)
 			(effects
 				(font
@@ -6198,7 +6196,7 @@
 				(hide yes)
 			)
 		)
-		(pin ""
+		(pin "1"
 			(uuid "4d57526a-17c4-4945-9d0e-529aa4c4728a")
 		)
 		(pin "2"
@@ -8122,73 +8120,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:Conn_01x02_Pin")
-		(at 87.63 20.32 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "60badfb8-1dd2-408b-b214-5b2e0adc07e6")
-		(property "Reference" "Power1"
-			(at 83.566 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x02_Pin"
-			(at 86.614 25.908 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 87.63 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 87.63 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated"
-			(at 87.63 20.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "cb9428b6-cfcd-4c1c-a87d-0f532c999e02")
-		)
-		(pin "1"
-			(uuid "7793cd9e-aa34-4662-a390-cdbb8ac0cabb")
-		)
-		(instances
-			(project ""
-				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
-					(reference "Power1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "10uFtantalum:293D106X9010C2TE3")
 		(at 113.03 35.56 270)
 		(unit 1)
@@ -9071,7 +9002,7 @@
 				)
 			)
 		)
-		(property "Footprint" "ESP8266-01_ESP-01:ESP8266-01_ESP-01"
+		(property "Footprint" "wifi:wifi"
 			(at 246.38 153.67 0)
 			(effects
 				(font
@@ -9489,7 +9420,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "twostateswitch:SLW12768644AD"
 			(at 48.26 83.82 0)
 			(effects
 				(font
@@ -10641,6 +10572,74 @@
 			(project "colorsorter_schematic"
 				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
 					(reference "C13")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x02_Pin")
+		(at 87.63 20.32 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fa0d810f-1706-4ae0-a536-2424ff6bec54")
+		(property "Reference" "J8"
+			(at 88.265 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_01x02_Pin"
+			(at 88.265 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
+			(at 87.63 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 87.63 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x02, script generated"
+			(at 87.63 20.32 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "9a19f802-dc1e-4a87-91e4-02b6445441cd")
+		)
+		(pin "1"
+			(uuid "acc7309e-b755-4dc9-8382-b2355f00b633")
+		)
+		(instances
+			(project ""
+				(path "/f85b107f-670e-4885-9436-e3b5bb042aa6"
+					(reference "J8")
 					(unit 1)
 				)
 			)
