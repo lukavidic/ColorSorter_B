@@ -1,4 +1,4 @@
-24213604702875615
+24213604702874248
 0.1uF
 CAPC2012X94N
 0805 (2012 Metric)-ren4
@@ -56839,13 +56839,6 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
-ESP8266-01_ESP-01 FOOTPRINT
-XCVR_ESP8266-01_ESP-01
-
-
-0
-8
-8
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -98069,3 +98062,10 @@ LM1117DT-3.3/NOPB
 0
 3
 3
+wifi
+wifi
+
+
+0
+8
+8
