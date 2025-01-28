@@ -9932,7 +9932,7 @@
 				)
 			)
 		)
-		(property "Footprint" "twostateswitch:SLW12768644AD"
+		(property "Footprint" "two_state_switch:SLW12768644AD"
 			(at 48.26 83.82 0)
 			(effects
 				(font

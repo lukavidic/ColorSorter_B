@@ -1,4 +1,4 @@
-24213606523041832
+24213644371667717
 0.1uF
 CAPC2012X94N
 0805 (2012 Metric)-ren4
@@ -34,7 +34,7 @@ C2012X5R1C106K085AC
 0
 2
 2
-10uFtantalum
+10uF_tantalum
 CAPPM6032X280N
 Case C
 Capacitor Polarised
@@ -67892,13 +67892,6 @@ Mounting 4.5mm 9774100982
 0
 8
 1
-NDP0003B
-NDP0003B
-
-LM1117DT-3.3/NOPB 
-0
-3
-3
 NetTie
 NetTie-2_SMD_Pad0.5mm
 Net tie, 2 pin, 0.5mm square SMD pads
@@ -98048,17 +98041,24 @@ Varistor VF
 0
 2
 2
-crystaloscillator
+crystal_oscillator
 830003156B
 830003156B-1
 Crystal or Oscillator
 0
 2
 2
-twostateswitch
+two_state_switch
 SLW12768644AD
 SLW-1276864-4A-D-1
 Switch
+0
+3
+3
+voltage_regulator
+NDP0003B
+
+LM1117DT-3.3/NOPB 
 0
 3
 3
