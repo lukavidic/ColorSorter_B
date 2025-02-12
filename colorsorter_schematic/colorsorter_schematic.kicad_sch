@@ -6147,7 +6147,7 @@
 		)
 		(uuid "70742071-7cc5-4cc1-916d-038ca2600879")
 	)
-	(text "servo"
+	(text "button"
 		(exclude_from_sim no)
 		(at 224.79 68.834 0)
 		(effects
@@ -6177,7 +6177,7 @@
 		)
 		(uuid "bff7a16a-aca7-44ae-a9b6-f96f83ba3865")
 	)
-	(text "button"
+	(text "servo"
 		(exclude_from_sim no)
 		(at 205.74 68.58 0)
 		(effects
