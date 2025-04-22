@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<VBox xmlns="http://javafx.com/javafx/17" 
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controller"
+      spacing="20" alignment="TOP_CENTER"
+      style="-fx-padding: 20; -fx-background-color: #f5f5f5;">
+
+    <!-- Top Status Area -->
+    <HBox spacing="15" alignment="CENTER">
+        <Label fx:id="connectionStatus" text="🔴 Disconnected"
+               style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <Button fx:id="toggleButton" text="Start"
+                onAction="#handleToggle"
+                style="-fx-font-size: 16px; -fx-min-width: 100;"/>
+    </HBox>
+    
+    <!-- Disk Control Area -->
+    <TitledPane text="Disk Color Directions" expanded="true">
+        <GridPane hgap="15" vgap="10" style="-fx-padding: 10;">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" percentWidth="20"/>
+                <ColumnConstraints halignment="CENTER" percentWidth="40"/>
+                <ColumnConstraints halignment="CENTER" percentWidth="40"/>
+            </columnConstraints>
+            <!-- Row 0: Red -->
+            <HBox GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="red"/>
+            </HBox>
+            <RadioButton fx:id="redLeft" text="Left" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="redRight" text="Right" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+            <!-- Row 1: Green -->
+            <HBox GridPane.rowIndex="1" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="green"/>
+            </HBox>
+            <RadioButton fx:id="greenLeft" text="Left" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="greenRight" text="Right" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+            <!-- Row 2: Blue -->
+            <HBox GridPane.rowIndex="2" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="blue"/>
+            </HBox>
+            <RadioButton fx:id="blueLeft" text="Left" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="blueRight" text="Right" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+            <!-- Row 3: Yellow -->
+            <HBox GridPane.rowIndex="3" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="yellow"/>
+            </HBox>
+            <RadioButton fx:id="yellowLeft" text="Left" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="yellowRight" text="Right" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+
+            <!-- Row 4: Purple -->
+            <HBox GridPane.rowIndex="4" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="purple"/>
+            </HBox>
+            <RadioButton fx:id="purpleLeft" text="Left" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="purpleRight" text="Right" GridPane.rowIndex="4" GridPane.columnIndex="2"/>
+
+            <!-- Row 5: Orange -->
+            <HBox GridPane.rowIndex="5" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="orange"/>
+            </HBox>
+            <RadioButton fx:id="orangeLeft" text="Left" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="orangeRight" text="Right" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+
+            <!-- Row 6: Black -->
+            <HBox GridPane.rowIndex="6" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="black"/>
+            </HBox>
+            <RadioButton fx:id="blackLeft" text="Left" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="blackRight" text="Right" GridPane.rowIndex="6" GridPane.columnIndex="2"/>
+
+            <!-- Row 7: White -->
+            <HBox GridPane.rowIndex="7" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="white"/>
+            </HBox>
+            <RadioButton fx:id="whiteLeft" text="Left" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="whiteRight" text="Right" GridPane.rowIndex="7" GridPane.columnIndex="2"/>
+
+            <!-- Row 8: Brown -->
+            <HBox GridPane.rowIndex="8" GridPane.columnIndex="0" alignment="CENTER">
+                <Circle radius="10" fill="brown"/>
+            </HBox>
+            <RadioButton fx:id="brownLeft" text="Left" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="brownRight" text="Right" GridPane.rowIndex="8" GridPane.columnIndex="2"/>
+        </GridPane>
+    </TitledPane>
+    
+    <!-- Send Configuration Button -->
+    <Button text="Send Configuration" onAction="#handleSendConfig"
+            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20;" />
+
+    <!-- Visual Sensor/Servo Feedback Area -->
+    <HBox spacing="50" alignment="CENTER">
+        <VBox alignment="CENTER">
+            <Label text="Left Spot" style="-fx-font-size: 14px;"/>
+            <Circle fx:id="leftCircle" radius="25" style="-fx-fill: gray;"/>
+        </VBox>
+        <VBox alignment="CENTER">
+            <Label text="Right Spot" style="-fx-font-size: 14px;"/>
+            <Circle fx:id="rightCircle" radius="25" style="-fx-fill: gray;"/>
+        </VBox>
+    </HBox>
+    
+    <!-- Bottom Status Message -->
+    <Label fx:id="statusLabel" text="Status: Waiting for connection..."
+           style="-fx-text-fill: #666; -fx-font-size: 12px;" />
+</VBox>
