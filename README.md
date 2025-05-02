@@ -1,4 +1,4 @@
-# Color Sorter | Real-Time Tile Sorting 🟥🟩🟦⬛⬜🟧🟨🟪🟫
+# Color Sorter | Real-Time Tile Sorting 🟥🟩🟦
 
 ## Project Specification
 
