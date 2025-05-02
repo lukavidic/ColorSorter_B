@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  <executable name="dist/default/debug/color_10_click_module.X.debug.elf">
+    <memory name="data">
+      <units>bytes</units>
+      <length>16384</length>
+      <used>256</used>
+      <free>16128</free>
+    </memory>
+    <memory name="program">
+      <units>bytes</units>
+      <length>66816</length>
+      <used>12945</used>
+      <free>53871</free>
+    </memory>
+  </executable>
+</project>
