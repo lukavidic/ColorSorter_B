@@ -1,33 +1,34 @@
+# Color Sorter | Real-Time Tile Sorting 🟥🟩🟦⬛⬜🟧🟨🟪🟫
 
-# About the Project
+## Project Specification
 
-## Project task specification provided by the project owner (general requirements):
+The project owner has defined the following general requirements:
 
-- Sorting tiles by their color using sensor-based detection.
-- A PC application that enables Wi-Fi communication and provides real-time process visualization and control.
-- Physical control of the system operation.
+- Detect and sort tiles by color using a sensor-based system.  
+- Develop a PC application that provides Wi-Fi communication, real-time visualization, and process control.  
+- Include a local physical interface for basic start/stop control.
 
-## The goal of this project
+## Project Objective
 
-The goal of this project is to implement the sorting of colored tiles into two colored containers.
-The system consists of a servo motor and a color detection sensor, which are controlled by a PCB board
-based on the PIC24FJ64GA702 microcontroller.
+The goal of this project is to sort colored tiles into two designated containers. The system includes:
 
-To ensure proper system operation, it is necessary to provide a 5V power supply to the board.
-A hardware button allows the system to be started and stopped,
-and an LED indicates whether the system is on or off.
+- **PIC24FJ64GA702 MCU** on a custom PCB,  
+- **Color 10 Click sensor** for color detection,  
+- **SG90 servo motor** to direct each tile into its container,  
+- **ESP8266-01 Wi-Fi module** for wireless link to PC,  
+- **Push-button** to toggle the sorting cycle on/off,  
+- **LED indicator** to show system status.  
 
-For this project, a PC application has been developed which provides visualization of the tile sorting process,
-as well as real-time control of the sorting process.
-The application communicates over a Wi-Fi network with the ESP8266-01 Wi-Fi module,
-which communicates with the microcontroller using UART.
+When a tile passes under the Color 10 Click sensor, it measures the color and sends the data via I²C to the MCU.
 
-The Color 10 Click color detection sensor communicates with the microcontroller via the I2C interface.
-Its main function is to detect the color and forward it to the microcontroller.
-Based on the color information and sorting process logic,
-the microcontroller sends a signal to the servo motor indicating where to move the given tile.
+Based on the sorting logic, the MCU drives the servo to move the tile into the correct container.
+
+The push-button starts and stops the cycle, while the LED indicates whether the system is active.
+
+A PC application offers a graphical interface for live monitoring and control. It communicates with the ESP8266-01 over Wi-Fi, which forwards commands to the microcontroller using UART protocol.
 
 ## Additional Information
 
-More information about the components, wiring, and their datasheets can be found on the Wiki page of this repository.
+For detailed component specifications, wiring diagrams, and datasheets, please see the Wiki pages in this repository.  
+
 
