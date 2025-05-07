@@ -29,6 +29,8 @@ A PC application offers a graphical interface for live monitoring and control. I
 
 ## Additional Information
 
-For detailed component specifications, wiring diagrams, and datasheets, please see the Wiki pages in this repository.  
+For detailed component specifications, wiring diagrams, datasheets and code documentation please see the Wiki pages in this repository.
 
+## Project Video Presentation
 
+[Video](https://github.com/lukavidic/ColorSorter_B/blob/project/video/ColorSorterB.mp4)
