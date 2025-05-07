@@ -1,0 +1,250 @@
+\doxysection{main.\+c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{main.c@{main.c}}
+
+
+Project entry point\+: system and peripheral initialization, main control loop.  
+
+
+{\ttfamily \#include "{}mcc\+\_\+generated\+\_\+files/system.\+h"{}}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$xc.\+h$>$}\newline
+{\ttfamily \#include $<$libpic30.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{main_8c_a99d7c812ba23bfdba5d29ec2fddf1e83}\label{main_8c_a99d7c812ba23bfdba5d29ec2fddf1e83} 
+\#define {\bfseries FCY}~16000000\+UL
+\item 
+\#define {\bfseries VEML3328\+\_\+\+SLAVE\+\_\+\+ADD}~0x10
+\begin{DoxyCompactList}\small\item\em 7-\/bit I2C address of the VEML3328 color sensor. \end{DoxyCompactList}\item 
+\#define {\bfseries CONF}~0x00
+\begin{DoxyCompactList}\small\item\em VEML3328 Configuration register address. \end{DoxyCompactList}\item 
+\#define {\bfseries R\+\_\+\+DATA}~0x05
+\begin{DoxyCompactList}\small\item\em Red channel data register address. \end{DoxyCompactList}\item 
+\#define {\bfseries G\+\_\+\+DATA}~0x06
+\begin{DoxyCompactList}\small\item\em Green channel data register address. \end{DoxyCompactList}\item 
+\#define {\bfseries B\+\_\+\+DATA}~0x07
+\begin{DoxyCompactList}\small\item\em Blue channel data register address. \end{DoxyCompactList}\item 
+\#define {\bfseries NUM\+\_\+\+SAMPLES}~5
+\begin{DoxyCompactList}\small\item\em Number of samples to average for noise reduction. \end{DoxyCompactList}\item 
+\#define {\bfseries PWM\+\_\+\+FREQ}~50
+\begin{DoxyCompactList}\small\item\em PWM frequency in Hertz used by Timer2/\+OC1 for driving the servo. \end{DoxyCompactList}\item 
+\#define {\bfseries SERVO\+\_\+\+RIGHT}~1400
+\begin{DoxyCompactList}\small\item\em Timer count for a 1.\+0 ms pulse. \end{DoxyCompactList}\item 
+\#define {\bfseries SERVO\+\_\+\+LEFT}~4800
+\begin{DoxyCompactList}\small\item\em Timer count for a 2.\+0 ms pulse. \end{DoxyCompactList}\item 
+\#define {\bfseries SERVO\+\_\+\+CENTER}~3000
+\begin{DoxyCompactList}\small\item\em Timer count for a 1.\+5 ms pulse. \end{DoxyCompactList}\item 
+\#define {\bfseries BUFFER\+\_\+\+SIZE}~128
+\begin{DoxyCompactList}\small\item\em Circular buffer size for UART RX. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__wifi_ga5c01e95ec3c881cdd00e311327126693}{UART1\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Configure UART1 for ESP8266 AT-\/command communication at 115200 baud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wifi_ga226557d5e42f7e29ddaff30606138459}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((interrupt, no\+\_\+auto\+\_\+psv))
+\begin{DoxyCompactList}\small\item\em UART1 receive interrupt service routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wifi_gae09db1d66bd1adcdd83dc5da5b92df01}{UART1\+\_\+\+Send\+String}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Sends a null-\/terminated string over UART1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wifi_ga750be53afe22b006b8b36b42f3c12323}{clean\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Clears the UART receive buffer. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__wifi_ga77c4426d055fdae52de6699ad12977b8}{UART\+\_\+\+Read\+String}} (char \texorpdfstring{$\ast$}{*}dest, unsigned max\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Reads a string from the circular buffer (rx\+\_\+buffer). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__wifi_ga3caa3ee64e1cd898153a982f04afd722}{UART\+\_\+\+Data\+Ready}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if data is available in the receive buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a132ccc16e94acf34995b29762f916e07}{parse\+Config\+Message}} (char \texorpdfstring{$\ast$}{*}msg)
+\begin{DoxyCompactList}\small\item\em Parses configuration message in the format "{}\+CFG\+:\+Key=\+Value,..."{}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ab52be1be8a40794a6b9df64a71a76fb4}{send\+Movement\+Command}} (const char \texorpdfstring{$\ast$}{*}side, const char \texorpdfstring{$\ast$}{*}color)
+\begin{DoxyCompactList}\small\item\em Sends information on movement over the ESP8266 TCP link. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__servo_ga9a6cca57e7cd20ae2ee6d92e289583ae}{servo\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize Timer2 and OC1 for PWM control of the servo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__servo_ga842b346ee987526048bdd1c50baf83e0}{toggle\+\_\+servo}} ()
+\begin{DoxyCompactList}\small\item\em Cycle through CENTER -\/\texorpdfstring{$>$}{>} RIGHT -\/\texorpdfstring{$>$}{>} CENTER -\/\texorpdfstring{$>$}{>} LEFT -\/\texorpdfstring{$>$}{>} ... \end{DoxyCompactList}\item 
+void {\bfseries move\+Right} ()
+\begin{DoxyCompactList}\small\item\em Move the servo fully to the right (0 degrees). \end{DoxyCompactList}\item 
+void {\bfseries move\+Left} ()
+\begin{DoxyCompactList}\small\item\em Move the servo fully to the left (180 degrees). \end{DoxyCompactList}\item 
+void {\bfseries move\+Center} ()
+\begin{DoxyCompactList}\small\item\em Move the servo to the center (90 degrees). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__servo_ga68cccc228da58de7746db167eaeea7b7}{servo\+\_\+set\+\_\+angle}} (int angle)
+\begin{DoxyCompactList}\small\item\em Set servo to an arbitrary angle between 0 and 180 degrees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_ga2a4f4d7ea2f3b7b7f875e95d579812ad}{VEML3328\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the VEML3328 sensor with configured gain and integration time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_ga30da27c967c427811646a5a6f66f495f}{WS2812\+\_\+\+Send\+\_\+\+Byte}} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Sends a single byte to the WS2812 LED strip via SPI encoding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_ga938d9076304a30229d0cff9510c6b0de}{WS2812\+\_\+\+Set\+Color}} (uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue)
+\begin{DoxyCompactList}\small\item\em Sets the color of the WS2812 LED strip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_ga173beda109164a3bd6007b60aab9f712}{VEML3328\+\_\+read}} ()
+\begin{DoxyCompactList}\small\item\em Reads raw color data from VEML3328 sensor and computes channel averages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_gac2d7a769e281883a0956dceed09e6604}{VEML3328\+\_\+color\+\_\+detection}} (uint16\+\_\+t \mbox{\hyperlink{group__color_gadc07744a7bedcd311a8618d141eb9522}{avg\+\_\+value\+\_\+red}}, uint16\+\_\+t \mbox{\hyperlink{group__color_ga7b3bd317c47e4944542af39a7c18e82c}{avg\+\_\+value\+\_\+green}}, uint16\+\_\+t \mbox{\hyperlink{group__color_ga8c00906ad2d2000612540a036140f2aa}{avg\+\_\+value\+\_\+blue}})
+\begin{DoxyCompactList}\small\item\em Detects the current color based on averaged sensor values and acts accordingly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_af5c7cf9db2f8b4ad6c509f61a9a89985}{populate\+Color\+Array\+From\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em Populates the color\+\_\+array based on configuration flags. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile char {\bfseries rx\+\_\+buffer} \mbox{[}\mbox{\hyperlink{group__wifi_ga6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em UART receive buffer. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t {\bfseries rx\+\_\+head} = 0
+\begin{DoxyCompactList}\small\item\em Head index of the circular buffer. \end{DoxyCompactList}\item 
+volatile uint16\+\_\+t {\bfseries rx\+\_\+tail} = 0
+\begin{DoxyCompactList}\small\item\em Tail index of the circular buffer. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+AT} = "{}AT\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to test communication. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+RST} = "{}AT+RST\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to reset the module. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+GMR} = "{}AT+GMR\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to get firmware version. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+MODE} = "{}AT+CWMODE=1\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to set mode (1 = Station mode) \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+WIFI\+\_\+\+CONN} = "{}AT+CWJAP=\textbackslash{}"{}etfbl.\+net\textbackslash{}"{},\textbackslash{}"{}\textbackslash{}"{}\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to connect to Wi\+Fi network. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+CHECK\+\_\+\+IP} = "{}AT+CIFSR\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to get IP address. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+CONN\+\_\+\+TYPE} = "{}AT+CIPMUX=0\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to configure connection mode (0 = Single connection) \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+START\+\_\+\+TCP} = "{}AT+CIPSTART=\textbackslash{}"{}TCP\textbackslash{}"{},\textbackslash{}"{}10.\+99.\+131.\+221\textbackslash{}"{},8084\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to start TCP connection. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+SEND} = "{}AT+CIPSEND=5\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to send 5 bytes of data. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_ada4f427390971e4e8e75ce0ea2261de0}\label{main_8c_ada4f427390971e4e8e75ce0ea2261de0} 
+volatile char {\bfseries config\+Red}
+\item 
+\Hypertarget{main_8c_ace31a14db6ccf7b0850ae14144a0b69b}\label{main_8c_ace31a14db6ccf7b0850ae14144a0b69b} 
+volatile char {\bfseries config\+Green}
+\item 
+\Hypertarget{main_8c_addab54a7706bd6b3ed97c6b94928e48b}\label{main_8c_addab54a7706bd6b3ed97c6b94928e48b} 
+volatile char {\bfseries config\+Blue}
+\item 
+\Hypertarget{main_8c_a1157bd21951255fb075598ff53b4d6fa}\label{main_8c_a1157bd21951255fb075598ff53b4d6fa} 
+volatile char {\bfseries config\+Yellow}
+\item 
+\Hypertarget{main_8c_a42e6537d762f6735b0186e173fb952e7}\label{main_8c_a42e6537d762f6735b0186e173fb952e7} 
+volatile char {\bfseries config\+Purple}
+\item 
+\Hypertarget{main_8c_a4bfc33636a6394ce17ee092f652ce588}\label{main_8c_a4bfc33636a6394ce17ee092f652ce588} 
+volatile char {\bfseries config\+Orange}
+\item 
+\Hypertarget{main_8c_ae30d154dae4bd006f2900fcf19a672fc}\label{main_8c_ae30d154dae4bd006f2900fcf19a672fc} 
+volatile char {\bfseries config\+Black}
+\item 
+\Hypertarget{main_8c_aafd269ef987acf26c6fadc3f68bd579c}\label{main_8c_aafd269ef987acf26c6fadc3f68bd579c} 
+volatile char {\bfseries config\+White}
+\item 
+\Hypertarget{main_8c_abb1197d47c6665382ea79e9094bd33e6}\label{main_8c_abb1197d47c6665382ea79e9094bd33e6} 
+volatile char {\bfseries config\+Brown}
+\item 
+static uint16\+\_\+t {\bfseries avg\+\_\+value\+\_\+red}
+\begin{DoxyCompactList}\small\item\em Average red channel value across samples. \end{DoxyCompactList}\item 
+static uint16\+\_\+t {\bfseries avg\+\_\+value\+\_\+green}
+\begin{DoxyCompactList}\small\item\em Average green channel value across samples. \end{DoxyCompactList}\item 
+static uint16\+\_\+t {\bfseries avg\+\_\+value\+\_\+blue}
+\begin{DoxyCompactList}\small\item\em Average blue channel value across samples. \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_a2de312dc84bb394e0396fb44fb5595be}\label{main_8c_a2de312dc84bb394e0396fb44fb5595be} 
+char {\bfseries color\+\_\+array} \mbox{[}9\mbox{]} = \{0\}
+\begin{DoxyCompactList}\small\item\em Array indicating tiles color servo side L(1)/R(0). \end{DoxyCompactList}\item 
+\Hypertarget{main_8c_aeb824be75611cc83b9b6e8d18b66bfc1}\label{main_8c_aeb824be75611cc83b9b6e8d18b66bfc1} 
+uint16\+\_\+t {\bfseries counter} = 0
+\item 
+\Hypertarget{main_8c_a1abe4bb82b66a11a41add83e7ef7b8b1}\label{main_8c_a1abe4bb82b66a11a41add83e7ef7b8b1} 
+volatile bool {\bfseries simulation\+Enabled} = false
+\begin{DoxyCompactList}\small\item\em Global flag to control simulation state (true = running, false = paused). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Project entry point\+: system and peripheral initialization, main control loop. 
+
+Performs startup of I2C, UART, SPI, PWM servo, and Wi-\/\+Fi; contains a loop that parses UART commands, reads/averages color sensor data, drives the servo/\+LEDs, and sends movement messages over TCP to the java Application. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+RIGHT SET 0
+
+Initialization
+
+Wi\+Fi Connection Sequence Set Wi\+Fi mode to Station
+
+Connect to the Wi\+Fi network (SSID "{}etfbl.\+net"{} with no password).
+
+TCP Connection Sequence Set connection mode to single connection.
+
+Establish a TCP connection with the remote IP and port.
+
+Prepare to send data (3 bytes).
+
+Send the actual data.
+
+The loop checks for incoming UART messages and depending on the message recieved it parses and applies configuration settings, and on "{}\+Start"{} or "{}\+Stop"{} toggles the simulation\+Enabled flag. Besides UART handling, when simulation\+Enabled is true it updates LEDs, reads sensor data, and depending on the sensor data moves servo and sends info to the application if required. Otherwise if simulation\+Enabled is false it clears LEDs and idles with timed delays.\Hypertarget{main_8c_a132ccc16e94acf34995b29762f916e07}\index{main.c@{main.c}!parseConfigMessage@{parseConfigMessage}}
+\index{parseConfigMessage@{parseConfigMessage}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{parseConfigMessage()}{parseConfigMessage()}}
+{\footnotesize\ttfamily \label{main_8c_a132ccc16e94acf34995b29762f916e07} 
+void parse\+Config\+Message (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{msg}{}\end{DoxyParamCaption})}
+
+
+
+Parses configuration message in the format "{}\+CFG\+:\+Key=\+Value,..."{}. 
+
+Locates the "{}\+CFG\+:"{} prefix and splits the following text into comma-\/separated Key=Value tokens. ~\newline
+ For each token, it extracts the key and single-\/character value and updates the corresponding global config flag. ~\newline
+ Tokens with unknown keys or missing values are ignored.
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & Input message string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Supports keys for Red, Green, Blue, Yellow, Purple, Orange, Black, White, Brown. 
+\end{DoxyNote}
+\Hypertarget{main_8c_af5c7cf9db2f8b4ad6c509f61a9a89985}\index{main.c@{main.c}!populateColorArrayFromConfig@{populateColorArrayFromConfig}}
+\index{populateColorArrayFromConfig@{populateColorArrayFromConfig}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{populateColorArrayFromConfig()}{populateColorArrayFromConfig()}}
+{\footnotesize\ttfamily \label{main_8c_af5c7cf9db2f8b4ad6c509f61a9a89985} 
+void populate\+Color\+Array\+From\+Config (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Populates the color\+\_\+array based on configuration flags. 
+
+This function sets each element of the {\ttfamily color\+\_\+array} to 1 if the corresponding configuration variable is set to `\textquotesingle{}L'\`{} (indicating that the disk color is tied to the left side), or to 0 otherwise (right side). \Hypertarget{main_8c_ab52be1be8a40794a6b9df64a71a76fb4}\index{main.c@{main.c}!sendMovementCommand@{sendMovementCommand}}
+\index{sendMovementCommand@{sendMovementCommand}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{sendMovementCommand()}{sendMovementCommand()}}
+{\footnotesize\ttfamily \label{main_8c_ab52be1be8a40794a6b9df64a71a76fb4} 
+void send\+Movement\+Command (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{side}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Sends information on movement over the ESP8266 TCP link. 
+
+Formats a {\ttfamily MOV\#\texorpdfstring{$<$}{<}side\texorpdfstring{$>$}{>}\#\texorpdfstring{$<$}{<}color\texorpdfstring{$>$}{>}\textbackslash{}r\textbackslash{}n} message, computes its length, and issues the corresponding {\ttfamily AT+\+CIPSEND=\texorpdfstring{$<$}{<}len\texorpdfstring{$>$}{>}} command to the module. After receiving positive prompt, it transmits the movement string and clears the UART buffer to prepare for the next operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & Movement direction (e.\+g., "{}left"{}, "{}right"{}). \\
+\hline
+{\em color} & Color (e.\+g., "{}red"{}, "{}blue"{}). \\
+\hline
+\end{DoxyParams}
+Calculate the length of the data message (not including the null terminator).
+
+\texorpdfstring{$<$}{<} For "{}\+MOV\#right\#orange\textbackslash{}r\textbackslash{}n"{}, len should be 18.
+
+\texorpdfstring{$<$}{<} Build the AT command with the calculated length.
+
+\texorpdfstring{$<$}{<} Send the AT+\+CIPSEND command so the module is ready to accept the data.
+
+\texorpdfstring{$<$}{<} Wait for the "{}$>$"{} prompt from the module (adjust delay as needed)
+
+\texorpdfstring{$<$}{<} Now send the actual movement command message
+
+\texorpdfstring{$<$}{<} Give time for the data transmission

@@ -1,0 +1,173 @@
+\doxysection{Wi-\/\+Fi / ESP8266}
+\hypertarget{group__wifi}{}\label{group__wifi}\index{Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}}
+
+
+AT-\/command interface for ESP8266 TCP connectivity.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__wifi_ga6b20d41d6252e9871430c242cb1a56e7}\label{group__wifi_ga6b20d41d6252e9871430c242cb1a56e7} 
+\#define {\bfseries BUFFER\+\_\+\+SIZE}~128
+\begin{DoxyCompactList}\small\item\em Circular buffer size for UART RX. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__wifi_ga5c01e95ec3c881cdd00e311327126693}{UART1\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Configure UART1 for ESP8266 AT-\/command communication at 115200 baud. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wifi_ga226557d5e42f7e29ddaff30606138459}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((interrupt, no\+\_\+auto\+\_\+psv))
+\begin{DoxyCompactList}\small\item\em UART1 receive interrupt service routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wifi_gae09db1d66bd1adcdd83dc5da5b92df01}{UART1\+\_\+\+Send\+String}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Sends a null-\/terminated string over UART1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__wifi_ga750be53afe22b006b8b36b42f3c12323}{clean\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Clears the UART receive buffer. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__wifi_ga77c4426d055fdae52de6699ad12977b8}{UART\+\_\+\+Read\+String}} (char \texorpdfstring{$\ast$}{*}dest, unsigned max\+\_\+len)
+\begin{DoxyCompactList}\small\item\em Reads a string from the circular buffer (rx\+\_\+buffer). \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__wifi_ga3caa3ee64e1cd898153a982f04afd722}{UART\+\_\+\+Data\+Ready}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if data is available in the receive buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__wifi_gad2fd9b34ba5f73999809cd2e1fc5cf27}\label{group__wifi_gad2fd9b34ba5f73999809cd2e1fc5cf27} 
+volatile char {\bfseries rx\+\_\+buffer} \mbox{[}\mbox{\hyperlink{group__wifi_ga6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em UART receive buffer. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_ga41858b503d36fe5186ae7034da867fad}\label{group__wifi_ga41858b503d36fe5186ae7034da867fad} 
+volatile uint16\+\_\+t {\bfseries rx\+\_\+head} = 0
+\begin{DoxyCompactList}\small\item\em Head index of the circular buffer. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_gaace368ec3f8fd8ed460175fa3a85bf87}\label{group__wifi_gaace368ec3f8fd8ed460175fa3a85bf87} 
+volatile uint16\+\_\+t {\bfseries rx\+\_\+tail} = 0
+\begin{DoxyCompactList}\small\item\em Tail index of the circular buffer. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_ga2f02c951091b93013b8b9781970eb454}\label{group__wifi_ga2f02c951091b93013b8b9781970eb454} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+AT} = "{}AT\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to test communication. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_ga1f3bff4b7aba7c018b667b8dc2b754ef}\label{group__wifi_ga1f3bff4b7aba7c018b667b8dc2b754ef} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+RST} = "{}AT+RST\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to reset the module. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_ga9a2787e0ab5fa4f0c41fa2c09b4ab6b6}\label{group__wifi_ga9a2787e0ab5fa4f0c41fa2c09b4ab6b6} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+GMR} = "{}AT+GMR\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to get firmware version. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_ga5143a707f11ad9c09203675081255f6f}\label{group__wifi_ga5143a707f11ad9c09203675081255f6f} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+MODE} = "{}AT+CWMODE=1\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to set mode (1 = Station mode) \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_gaff3173962307965de346f4d909e7e60b}\label{group__wifi_gaff3173962307965de346f4d909e7e60b} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+WIFI\+\_\+\+CONN} = "{}AT+CWJAP=\textbackslash{}"{}etfbl.\+net\textbackslash{}"{},\textbackslash{}"{}\textbackslash{}"{}\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to connect to Wi\+Fi network. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_ga4219f0d66299cffedf222d1dc8855d16}\label{group__wifi_ga4219f0d66299cffedf222d1dc8855d16} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+CHECK\+\_\+\+IP} = "{}AT+CIFSR\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to get IP address. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_gabb0a03ee6dcc397253ca31f83a30cfb5}\label{group__wifi_gabb0a03ee6dcc397253ca31f83a30cfb5} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+CONN\+\_\+\+TYPE} = "{}AT+CIPMUX=0\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to configure connection mode (0 = Single connection) \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_ga5d787dab9afed7007f302b8d82443c59}\label{group__wifi_ga5d787dab9afed7007f302b8d82443c59} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+START\+\_\+\+TCP} = "{}AT+CIPSTART=\textbackslash{}"{}TCP\textbackslash{}"{},\textbackslash{}"{}10.\+99.\+131.\+221\textbackslash{}"{},8084\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to start TCP connection. \end{DoxyCompactList}\item 
+\Hypertarget{group__wifi_gabcee2b0af8d8dccca4398ed6cb0978dc}\label{group__wifi_gabcee2b0af8d8dccca4398ed6cb0978dc} 
+const char \texorpdfstring{$\ast$}{*} {\bfseries CMD\+\_\+\+SEND} = "{}AT+CIPSEND=5\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em AT command to send 5 bytes of data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AT-\/command interface for ESP8266 TCP connectivity. 
+
+Contains the UART1 init, circular buffer ISR, and ~\newline
+ all AT-\/command sequences (mode, start TCP, send data etc.). 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__wifi_ga226557d5e42f7e29ddaff30606138459}\index{Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily \label{group__wifi_ga226557d5e42f7e29ddaff30606138459} 
+void \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(interrupt, no\+\_\+auto\+\_\+psv)}]{}{}\end{DoxyParamCaption})}
+
+
+
+UART1 receive interrupt service routine. 
+
+INT1 Interrupt Service Routine for RB15 push-\/button.
+
+UART1 error interrupt service routine.
+
+This ISR clears the UART1 receive-\/interrupt flag, then reads all bytes from the hardware FIFO into the software circular buffer (rx\+\_\+buffer), advancing the head index and preventing overflow by checking against the tail index.
+
+\begin{DoxyNote}{Note}
+Handles overrun, framing, and parity errors.
+\end{DoxyNote}
+This handler fires on the falling edge of RB15 (active-\/low button) and toggles the global {\ttfamily simulation\+Enabled} flag. After servicing, it clears the INT1 interrupt flag to allow subsequent events. \Hypertarget{group__wifi_ga750be53afe22b006b8b36b42f3c12323}\index{Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}!cleanBuffer@{cleanBuffer}}
+\index{cleanBuffer@{cleanBuffer}!Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}}
+\doxysubsubsection{\texorpdfstring{cleanBuffer()}{cleanBuffer()}}
+{\footnotesize\ttfamily \label{group__wifi_ga750be53afe22b006b8b36b42f3c12323} 
+void clean\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Clears the UART receive buffer. 
+
+\begin{DoxyNote}{Note}
+Resets the head and tail indices. 
+\end{DoxyNote}
+\Hypertarget{group__wifi_ga5c01e95ec3c881cdd00e311327126693}\index{Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}!UART1\_Init@{UART1\_Init}}
+\index{UART1\_Init@{UART1\_Init}!Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}}
+\doxysubsubsection{\texorpdfstring{UART1\_Init()}{UART1\_Init()}}
+{\footnotesize\ttfamily \label{group__wifi_ga5c01e95ec3c881cdd00e311327126693} 
+void UART1\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Configure UART1 for ESP8266 AT-\/command communication at 115200 baud. 
+
+\begin{DoxyNote}{Note}
+Uses RB6 as RX and RB7 as TX. 
+\end{DoxyNote}
+Unlock (PPS), map U1\+TX and U1\+RX
+
+Clear and enable UART RX interrupt.
+
+Configure error interrupt handling.\Hypertarget{group__wifi_gae09db1d66bd1adcdd83dc5da5b92df01}\index{Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}!UART1\_SendString@{UART1\_SendString}}
+\index{UART1\_SendString@{UART1\_SendString}!Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}}
+\doxysubsubsection{\texorpdfstring{UART1\_SendString()}{UART1\_SendString()}}
+{\footnotesize\ttfamily \label{group__wifi_gae09db1d66bd1adcdd83dc5da5b92df01} 
+void UART1\+\_\+\+Send\+String (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Sends a null-\/terminated string over UART1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Pointer to the string to send. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__wifi_ga3caa3ee64e1cd898153a982f04afd722}\index{Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}!UART\_DataReady@{UART\_DataReady}}
+\index{UART\_DataReady@{UART\_DataReady}!Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}}
+\doxysubsubsection{\texorpdfstring{UART\_DataReady()}{UART\_DataReady()}}
+{\footnotesize\ttfamily \label{group__wifi_ga3caa3ee64e1cd898153a982f04afd722} 
+bool UART\+\_\+\+Data\+Ready (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if data is available in the receive buffer. 
+
+\begin{DoxyReturn}{Returns}
+true if data is available, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__wifi_ga77c4426d055fdae52de6699ad12977b8}\index{Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}!UART\_ReadString@{UART\_ReadString}}
+\index{UART\_ReadString@{UART\_ReadString}!Wi-\/Fi / ESP8266@{Wi-\/Fi / ESP8266}}
+\doxysubsubsection{\texorpdfstring{UART\_ReadString()}{UART\_ReadString()}}
+{\footnotesize\ttfamily \label{group__wifi_ga77c4426d055fdae52de6699ad12977b8} 
+uint16\+\_\+t UART\+\_\+\+Read\+String (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{dest}{, }\item[{unsigned}]{max\+\_\+len}{}\end{DoxyParamCaption})}
+
+
+
+Reads a string from the circular buffer (rx\+\_\+buffer). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & Destination buffer to store the string. \\
+\hline
+{\em max\+\_\+len} & Maximum number of characters to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of characters read. 
+\end{DoxyReturn}

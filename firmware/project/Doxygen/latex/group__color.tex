@@ -1,0 +1,140 @@
+\doxysection{Color Sensor \& Detection}
+\hypertarget{group__color}{}\label{group__color}\index{Color Sensor \& Detection@{Color Sensor \& Detection}}
+
+
+VEML3328 initialization, sampling, and color-\/based actions.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__color_ga602fa884c9450b231632506aaabff7e1}\label{group__color_ga602fa884c9450b231632506aaabff7e1} 
+\#define {\bfseries VEML3328\+\_\+\+SLAVE\+\_\+\+ADD}~0x10
+\begin{DoxyCompactList}\small\item\em 7-\/bit I2C address of the VEML3328 color sensor. \end{DoxyCompactList}\item 
+\Hypertarget{group__color_gafb6b8c4d21f9183c9c65f548d976af2f}\label{group__color_gafb6b8c4d21f9183c9c65f548d976af2f} 
+\#define {\bfseries CONF}~0x00
+\begin{DoxyCompactList}\small\item\em VEML3328 Configuration register address. \end{DoxyCompactList}\item 
+\Hypertarget{group__color_gac51dc180dde0fcda153d9e61f5c0f2f8}\label{group__color_gac51dc180dde0fcda153d9e61f5c0f2f8} 
+\#define {\bfseries R\+\_\+\+DATA}~0x05
+\begin{DoxyCompactList}\small\item\em Red channel data register address. \end{DoxyCompactList}\item 
+\Hypertarget{group__color_ga3e04dac31427580e1c0898b943261cee}\label{group__color_ga3e04dac31427580e1c0898b943261cee} 
+\#define {\bfseries G\+\_\+\+DATA}~0x06
+\begin{DoxyCompactList}\small\item\em Green channel data register address. \end{DoxyCompactList}\item 
+\Hypertarget{group__color_ga308224203f0b5eca59db631eb92d1c86}\label{group__color_ga308224203f0b5eca59db631eb92d1c86} 
+\#define {\bfseries B\+\_\+\+DATA}~0x07
+\begin{DoxyCompactList}\small\item\em Blue channel data register address. \end{DoxyCompactList}\item 
+\Hypertarget{group__color_gaf0b23eedf2352de4c1eff77e1401730c}\label{group__color_gaf0b23eedf2352de4c1eff77e1401730c} 
+\#define {\bfseries NUM\+\_\+\+SAMPLES}~5
+\begin{DoxyCompactList}\small\item\em Number of samples to average for noise reduction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__color_ga2a4f4d7ea2f3b7b7f875e95d579812ad}{VEML3328\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the VEML3328 sensor with configured gain and integration time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_ga30da27c967c427811646a5a6f66f495f}{WS2812\+\_\+\+Send\+\_\+\+Byte}} (uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Sends a single byte to the WS2812 LED strip via SPI encoding. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_ga938d9076304a30229d0cff9510c6b0de}{WS2812\+\_\+\+Set\+Color}} (uint8\+\_\+t red, uint8\+\_\+t green, uint8\+\_\+t blue)
+\begin{DoxyCompactList}\small\item\em Sets the color of the WS2812 LED strip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_ga173beda109164a3bd6007b60aab9f712}{VEML3328\+\_\+read}} ()
+\begin{DoxyCompactList}\small\item\em Reads raw color data from VEML3328 sensor and computes channel averages. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__color_gac2d7a769e281883a0956dceed09e6604}{VEML3328\+\_\+color\+\_\+detection}} (uint16\+\_\+t \mbox{\hyperlink{group__color_gadc07744a7bedcd311a8618d141eb9522}{avg\+\_\+value\+\_\+red}}, uint16\+\_\+t \mbox{\hyperlink{group__color_ga7b3bd317c47e4944542af39a7c18e82c}{avg\+\_\+value\+\_\+green}}, uint16\+\_\+t \mbox{\hyperlink{group__color_ga8c00906ad2d2000612540a036140f2aa}{avg\+\_\+value\+\_\+blue}})
+\begin{DoxyCompactList}\small\item\em Detects the current color based on averaged sensor values and acts accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__color_gadc07744a7bedcd311a8618d141eb9522}\label{group__color_gadc07744a7bedcd311a8618d141eb9522} 
+static uint16\+\_\+t {\bfseries avg\+\_\+value\+\_\+red}
+\begin{DoxyCompactList}\small\item\em Average red channel value across samples. \end{DoxyCompactList}\item 
+\Hypertarget{group__color_ga7b3bd317c47e4944542af39a7c18e82c}\label{group__color_ga7b3bd317c47e4944542af39a7c18e82c} 
+static uint16\+\_\+t {\bfseries avg\+\_\+value\+\_\+green}
+\begin{DoxyCompactList}\small\item\em Average green channel value across samples. \end{DoxyCompactList}\item 
+\Hypertarget{group__color_ga8c00906ad2d2000612540a036140f2aa}\label{group__color_ga8c00906ad2d2000612540a036140f2aa} 
+static uint16\+\_\+t {\bfseries avg\+\_\+value\+\_\+blue}
+\begin{DoxyCompactList}\small\item\em Average blue channel value across samples. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+VEML3328 initialization, sampling, and color-\/based actions. 
+
+Implements functions for sending SPI data to WS2812 LEDs, initializing the VEML3328 sensor, reading color data, and detecting colors to control actuators. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__color_gac2d7a769e281883a0956dceed09e6604}\index{Color Sensor \& Detection@{Color Sensor \& Detection}!VEML3328\_color\_detection@{VEML3328\_color\_detection}}
+\index{VEML3328\_color\_detection@{VEML3328\_color\_detection}!Color Sensor \& Detection@{Color Sensor \& Detection}}
+\doxysubsubsection{\texorpdfstring{VEML3328\_color\_detection()}{VEML3328\_color\_detection()}}
+{\footnotesize\ttfamily \label{group__color_gac2d7a769e281883a0956dceed09e6604} 
+void VEML3328\+\_\+color\+\_\+detection (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{avg\+\_\+value\+\_\+red}{, }\item[{uint16\+\_\+t}]{avg\+\_\+value\+\_\+green}{, }\item[{uint16\+\_\+t}]{avg\+\_\+value\+\_\+blue}{}\end{DoxyParamCaption})}
+
+
+
+Detects the current color based on averaged sensor values and acts accordingly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em avg\+\_\+value\+\_\+red} & Averaged red channel value. \\
+\hline
+{\em avg\+\_\+value\+\_\+green} & Averaged green channel value. \\
+\hline
+{\em avg\+\_\+value\+\_\+blue} & Averaged blue channel value.\\
+\hline
+\end{DoxyParams}
+Compares averaged values against calibrated thresholds for known colors and performs movement and communication commands. If no known color is detected, centers the actuator. 
+\begin{DoxyParams}{Parameters}
+{\em avg\+\_\+value\+\_\+blue} & with calibration \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__color_ga2a4f4d7ea2f3b7b7f875e95d579812ad}\index{Color Sensor \& Detection@{Color Sensor \& Detection}!VEML3328\_init@{VEML3328\_init}}
+\index{VEML3328\_init@{VEML3328\_init}!Color Sensor \& Detection@{Color Sensor \& Detection}}
+\doxysubsubsection{\texorpdfstring{VEML3328\_init()}{VEML3328\_init()}}
+{\footnotesize\ttfamily \label{group__color_ga2a4f4d7ea2f3b7b7f875e95d579812ad} 
+void VEML3328\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the VEML3328 sensor with configured gain and integration time. 
+
+Configures the sensor registers to shut down for safe configuration, sets gain to 4x and integration time to 400ms, then enables the sensor. \Hypertarget{group__color_ga173beda109164a3bd6007b60aab9f712}\index{Color Sensor \& Detection@{Color Sensor \& Detection}!VEML3328\_read@{VEML3328\_read}}
+\index{VEML3328\_read@{VEML3328\_read}!Color Sensor \& Detection@{Color Sensor \& Detection}}
+\doxysubsubsection{\texorpdfstring{VEML3328\_read()}{VEML3328\_read()}}
+{\footnotesize\ttfamily \label{group__color_ga173beda109164a3bd6007b60aab9f712} 
+void VEML3328\+\_\+read (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reads raw color data from VEML3328 sensor and computes channel averages. 
+
+Reads 16-\/bit raw data for red, green, and blue channels NUM\+\_\+\+SAMPLES times, computes the average for each channel, and updates internal average variables. Triggers color detection in simulation mode or turns off LEDs otherwise. \Hypertarget{group__color_ga30da27c967c427811646a5a6f66f495f}\index{Color Sensor \& Detection@{Color Sensor \& Detection}!WS2812\_Send\_Byte@{WS2812\_Send\_Byte}}
+\index{WS2812\_Send\_Byte@{WS2812\_Send\_Byte}!Color Sensor \& Detection@{Color Sensor \& Detection}}
+\doxysubsubsection{\texorpdfstring{WS2812\_Send\_Byte()}{WS2812\_Send\_Byte()}}
+{\footnotesize\ttfamily \label{group__color_ga30da27c967c427811646a5a6f66f495f} 
+void WS2812\+\_\+\+Send\+\_\+\+Byte (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{byte}{}\end{DoxyParamCaption})}
+
+
+
+Sends a single byte to the WS2812 LED strip via SPI encoding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte} & Byte to send; each bit is encoded into SPI pattern for WS2812 protocol. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__color_ga938d9076304a30229d0cff9510c6b0de}\index{Color Sensor \& Detection@{Color Sensor \& Detection}!WS2812\_SetColor@{WS2812\_SetColor}}
+\index{WS2812\_SetColor@{WS2812\_SetColor}!Color Sensor \& Detection@{Color Sensor \& Detection}}
+\doxysubsubsection{\texorpdfstring{WS2812\_SetColor()}{WS2812\_SetColor()}}
+{\footnotesize\ttfamily \label{group__color_ga938d9076304a30229d0cff9510c6b0de} 
+void WS2812\+\_\+\+Set\+Color (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{red}{, }\item[{uint8\+\_\+t}]{green}{, }\item[{uint8\+\_\+t}]{blue}{}\end{DoxyParamCaption})}
+
+
+
+Sets the color of the WS2812 LED strip. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em red} & Intensity of red channel (0-\/255). \\
+\hline
+{\em green} & Intensity of green channel (0-\/255). \\
+\hline
+{\em blue} & Intensity of blue channel (0-\/255).\\
+\hline
+\end{DoxyParams}
+Disables and re-\/enables SPI around the data transmission and sends the color channels in GRB order. (0,0,0) OFF, (128,128,128) WHITE LIGHT 

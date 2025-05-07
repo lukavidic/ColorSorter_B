@@ -1,0 +1,85 @@
+\doxysection{Servo Control}
+\hypertarget{group__servo}{}\label{group__servo}\index{Servo Control@{Servo Control}}
+
+
+API for initializing and driving the PWM servo.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__servo_ga76fe84d83b8d236bd4f0d20d7e2ed06f}\label{group__servo_ga76fe84d83b8d236bd4f0d20d7e2ed06f} 
+\#define {\bfseries PWM\+\_\+\+FREQ}~50
+\begin{DoxyCompactList}\small\item\em PWM frequency in Hertz used by Timer2/\+OC1 for driving the servo. \end{DoxyCompactList}\item 
+\Hypertarget{group__servo_gae2a7cd990460512f2695d999a0cbd45d}\label{group__servo_gae2a7cd990460512f2695d999a0cbd45d} 
+\#define {\bfseries SERVO\+\_\+\+RIGHT}~1400
+\begin{DoxyCompactList}\small\item\em Timer count for a 1.\+0 ms pulse. \end{DoxyCompactList}\item 
+\Hypertarget{group__servo_ga3d0ffe66e4e37785419f435378b0f223}\label{group__servo_ga3d0ffe66e4e37785419f435378b0f223} 
+\#define {\bfseries SERVO\+\_\+\+LEFT}~4800
+\begin{DoxyCompactList}\small\item\em Timer count for a 2.\+0 ms pulse. \end{DoxyCompactList}\item 
+\Hypertarget{group__servo_ga25e994af4d0287a9d61c26dbc175ec88}\label{group__servo_ga25e994af4d0287a9d61c26dbc175ec88} 
+\#define {\bfseries SERVO\+\_\+\+CENTER}~3000
+\begin{DoxyCompactList}\small\item\em Timer count for a 1.\+5 ms pulse. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__servo_ga9a6cca57e7cd20ae2ee6d92e289583ae}{servo\+\_\+init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize Timer2 and OC1 for PWM control of the servo. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__servo_ga842b346ee987526048bdd1c50baf83e0}{toggle\+\_\+servo}} ()
+\begin{DoxyCompactList}\small\item\em Cycle through CENTER -\/\texorpdfstring{$>$}{>} RIGHT -\/\texorpdfstring{$>$}{>} CENTER -\/\texorpdfstring{$>$}{>} LEFT -\/\texorpdfstring{$>$}{>} ... \end{DoxyCompactList}\item 
+\Hypertarget{group__servo_ga8f1aff0fabeb87f42932d5ce436f4d5c}\label{group__servo_ga8f1aff0fabeb87f42932d5ce436f4d5c} 
+void {\bfseries move\+Right} ()
+\begin{DoxyCompactList}\small\item\em Move the servo fully to the right (0 degrees). \end{DoxyCompactList}\item 
+\Hypertarget{group__servo_ga7a5379770a3d9a90ee4d827046d26eb0}\label{group__servo_ga7a5379770a3d9a90ee4d827046d26eb0} 
+void {\bfseries move\+Left} ()
+\begin{DoxyCompactList}\small\item\em Move the servo fully to the left (180 degrees). \end{DoxyCompactList}\item 
+\Hypertarget{group__servo_ga71a4d85e5291f6713792758b8d64d1c6}\label{group__servo_ga71a4d85e5291f6713792758b8d64d1c6} 
+void {\bfseries move\+Center} ()
+\begin{DoxyCompactList}\small\item\em Move the servo to the center (90 degrees). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__servo_ga68cccc228da58de7746db167eaeea7b7}{servo\+\_\+set\+\_\+angle}} (int angle)
+\begin{DoxyCompactList}\small\item\em Set servo to an arbitrary angle between 0 and 180 degrees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+API for initializing and driving the PWM servo. 
+
+This module contains functions to setup Timer2/\+OC1 for 50 Hz PWM, move the servo to 0 ,90 ,180 degrees, and arbitrary angles, ~\newline
+ plus a toggle helper. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__servo_ga9a6cca57e7cd20ae2ee6d92e289583ae}\index{Servo Control@{Servo Control}!servo\_init@{servo\_init}}
+\index{servo\_init@{servo\_init}!Servo Control@{Servo Control}}
+\doxysubsubsection{\texorpdfstring{servo\_init()}{servo\_init()}}
+{\footnotesize\ttfamily \label{group__servo_ga9a6cca57e7cd20ae2ee6d92e289583ae} 
+void servo\+\_\+init (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize Timer2 and OC1 for PWM control of the servo. 
+
+Sets up 20 ms period (50 Hz) channel on RB5 / OC1. Called before any move or toggle. \Hypertarget{group__servo_ga68cccc228da58de7746db167eaeea7b7}\index{Servo Control@{Servo Control}!servo\_set\_angle@{servo\_set\_angle}}
+\index{servo\_set\_angle@{servo\_set\_angle}!Servo Control@{Servo Control}}
+\doxysubsubsection{\texorpdfstring{servo\_set\_angle()}{servo\_set\_angle()}}
+{\footnotesize\ttfamily \label{group__servo_ga68cccc228da58de7746db167eaeea7b7} 
+void servo\+\_\+set\+\_\+angle (\begin{DoxyParamCaption}\item[{int}]{angle}{}\end{DoxyParamCaption})}
+
+
+
+Set servo to an arbitrary angle between 0 and 180 degrees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Desired angle in degrees; clipped to \mbox{[}0,180\mbox{]}.\\
+\hline
+\end{DoxyParams}
+Uses linear mapping into the timer-\/count range. \Hypertarget{group__servo_ga842b346ee987526048bdd1c50baf83e0}\index{Servo Control@{Servo Control}!toggle\_servo@{toggle\_servo}}
+\index{toggle\_servo@{toggle\_servo}!Servo Control@{Servo Control}}
+\doxysubsubsection{\texorpdfstring{toggle\_servo()}{toggle\_servo()}}
+{\footnotesize\ttfamily \label{group__servo_ga842b346ee987526048bdd1c50baf83e0} 
+void toggle\+\_\+servo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Cycle through CENTER -\/\texorpdfstring{$>$}{>} RIGHT -\/\texorpdfstring{$>$}{>} CENTER -\/\texorpdfstring{$>$}{>} LEFT -\/\texorpdfstring{$>$}{>} ... 
+
+Each call advances the servo to the next of four positions. 
