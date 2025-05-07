@@ -18,12 +18,14 @@ import javafx.scene.shape.Circle;
 
 public class Controller {
 
-    /** @brief Button to start/stop the simulation process */
-    @FXML private Button toggleButton;
     /** @brief Label for displaying operational status messages */
     @FXML private Label statusLabel;
     /** @brief Label showing current connection status to PIC */
     @FXML private Label connectionStatus;
+    /** @brief Button to start the simulation process */
+    @FXML private Button startButton;
+    /** @brief Button to stop the simulation process */
+    @FXML private Button stopButton;
 
 	// Color disk radio buttons
     /** @brief Radio button for selecting left position of red color */
@@ -72,7 +74,7 @@ public class Controller {
     @FXML private RadioButton brownRight;
 
     /** @brief Visual indicator circle for left color position */
-    @FXML private Circle leftCircle
+    @FXML private Circle leftCircle;
     /** @brief Visual indicator circle for right color position */
     @FXML private Circle rightCircle;
 
@@ -97,10 +99,9 @@ public class Controller {
     public void initialize() {
 		System.out.println("Test String ");
         updateConnectionState(false);
-        updateStatus("Status: Waiting for connection...");
+        updateUI("Status: Waiting for connection...");
         startServer();
 		
-		//updateVisualFeedback("left","orange");
         // Set up ToggleGroups to prevent both options being selected for each color.
         ToggleGroup redGroup = new ToggleGroup();
         redLeft.setToggleGroup(redGroup);
@@ -255,27 +256,42 @@ public class Controller {
     }
 
     /**
-     * @brief Handles start/stop button click
+     * @brief Handles Start button click
      * @param event JavaFX action event (automatic parameter)
-     * 
-     * Toggles simulation state and sends appropriate command to PIC.
-     * Updates button text and connection state.
+     *
+     * Starts the simulation, sends “Start” to the PIC, updates UI.
      */
-    @FXML 
-    private void handleToggle() {
-        isRunning = !isRunning; // Change state
-        String command = isRunning ? "Start\r\n" : "Stop\r\n";
-        
+    @FXML
+    private void handleStart() {
         if (out != null && !clientSocket.isClosed()) {
-            out.print(command);
-			out.flush(); 
-			//out.print(command);
-            updateUI("Sent: " + command.trim());
-            toggleButton.setText(isRunning ? "Stop" : "Start");
+            isRunning = true;
+            out.print("Start\r\n");
+			out.flush();
+            updateUI("Sent: Start");
         } else {
             updateUI("No active connection!");
-            isRunning = false; 
 			updateConnectionState(false);
+			isRunning = false; 
+        }
+    }
+
+    /**
+     * @brief Handles Stop button click
+     * @param event JavaFX action event (automatic parameter)
+     *
+     * Stops the simulation, sends “Stop” to the PIC, updates UI.
+     */
+    @FXML
+    private void handleStop() {
+        if (out != null && !clientSocket.isClosed()) {
+            isRunning = false;
+            out.print("Stop\r\n");
+			out.flush();
+            updateUI("Sent: Stop");
+        } else {
+            updateUI("No active connection!");
+			updateConnectionState(false);
+			isRunning = false;
         }
     }
 
@@ -317,18 +333,10 @@ public class Controller {
         if (out != null && !clientSocket.isClosed()) {
             out.print(configMessage); // send the full configuration message
             out.flush();              // flush to ensure it is transmitted immediately
-            updateStatus("Sent Config: " + configMessage.trim());
+            updateUI("Sent Config: " + configMessage.trim());
         } else {
-            updateStatus("No active connection!");
+            updateUI("No active connection!");
         }
-    }
-
-    /**
-     * @brief Updates status label with configuration information
-     * @param message The configuration status text to display
-     */
-    private void updateStatus(String message) {
-        Platform.runLater(() -> statusLabel.setText(message));
     }
 
     /**
@@ -342,7 +350,8 @@ public class Controller {
 		Platform.runLater(() -> {
 			connectionStatus.setText(connected ? "🟢 Connected" : "🔴 Disconnected");
 			connectionStatus.setStyle(connected ? "-fx-text-fill: green" : "-fx-text-fill: red");
-			toggleButton.setDisable(!connected);
+			startButton.setDisable(!connected);
+			stopButton.setDisable(!connected);
 		});
 	}
 

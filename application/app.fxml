@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 
-<VBox xmlns="http://javafx.com/javafx/17" 
+<VBox xmlns="http://javafx.com/javafx/17"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="Controller"
       spacing="20" alignment="TOP_CENTER"
@@ -20,11 +20,15 @@
     <HBox spacing="15" alignment="CENTER">
         <Label fx:id="connectionStatus" text="🔴 Disconnected"
                style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
-        <Button fx:id="toggleButton" text="Start"
-                onAction="#handleToggle"
+        <!-- Two separate buttons -->
+        <Button fx:id="startButton" text="Start"
+                onAction="#handleStart"
+                style="-fx-font-size: 16px; -fx-min-width: 100;"/>
+        <Button fx:id="stopButton" text="Stop"
+                onAction="#handleStop"
                 style="-fx-font-size: 16px; -fx-min-width: 100;"/>
     </HBox>
-    
+
     <!-- Disk Control Area -->
     <TitledPane text="Disk Color Directions" expanded="true">
         <GridPane hgap="15" vgap="10" style="-fx-padding: 10;">

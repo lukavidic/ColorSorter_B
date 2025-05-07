@@ -1,0 +1,83 @@
+\doxysection{Main Class Reference}
+\hypertarget{class_main}{}\label{class_main}\index{Main@{Main}}
+
+
+\doxylink{class_main}{Main} application class for the PIC \doxylink{class_controller}{Controller} Java\+FX application.  
+
+
+Inheritance diagram for Main\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_main_aaa75b38812324d0f17c89f139bde6ada}{start}} (Stage primary\+Stage)  throws Exception 
+\begin{DoxyCompactList}\small\item\em Java\+FX application start method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_main_a8a5d0f827edddff706cc0e6740d0579a}{main}} (String\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Entry point for the Java application. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_main}{Main} application class for the PIC \doxylink{class_controller}{Controller} Java\+FX application. 
+
+Handles primary stage setup and serves as the entry point for the application. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_main_a8a5d0f827edddff706cc0e6740d0579a}\index{Main@{Main}!main@{main}}
+\index{main@{main}!Main@{Main}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{class_main_a8a5d0f827edddff706cc0e6740d0579a} 
+static void Main.\+main (\begin{DoxyParamCaption}\item[{String\mbox{[}$\,$\mbox{]}}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Entry point for the Java application. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Command line arguments (not used) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_main_aaa75b38812324d0f17c89f139bde6ada}\index{Main@{Main}!start@{start}}
+\index{start@{start}!Main@{Main}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \label{class_main_aaa75b38812324d0f17c89f139bde6ada} 
+void Main.\+start (\begin{DoxyParamCaption}\item[{Stage}]{primary\+Stage}{}\end{DoxyParamCaption}) throws Exception}
+
+
+
+Java\+FX application start method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em primary\+Stage} & The main application window \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception} & if FXML loading fails\\
+\hline
+\end{DoxyExceptions}
+Initializes the GUI from FXML, sets up the controller, and configures\+:
+\begin{DoxyItemize}
+\item Window dimensions (700x700)
+\item Window title ("{}\+PIC Controller"{})
+\item Clean shutdown handling on window close 
+\end{DoxyItemize}Close request handler for graceful shutdown/cleanup
+
+Ensures\+:
+\begin{DoxyItemize}
+\item \doxylink{class_controller}{Controller} cleanup is performed
+\item Java\+FX platform exits properly
+\item JVM terminates completely
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_main_8java}{Main.\+java}}\end{DoxyCompactItemize}

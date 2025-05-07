@@ -1,0 +1,549 @@
+\doxysection{Controller Class Reference}
+\hypertarget{class_controller}{}\label{class_controller}\index{Controller@{Controller}}
+
+
+\doxylink{class_controller}{Controller} class for managing the application GUI and communication with the microcontroller.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_controller_afcd58eb83308da339fcbbf095af0593f}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initializes controller components. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a76c66daa7ab2af109aaf541c7da6b317}{stop\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Stops the server and cleans up resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a0aa4ff73d355b37536593cce0dba074c}{update\+Visual\+Feedback}} (String side, String color)
+\begin{DoxyCompactList}\small\item\em Updates visual feedback circles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_controller_a4a5482b258aef6ac6849d3afe3e5d29f}{cleanup\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Cleans up network resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a31dab465c2f038870b14ea542154eee1}{start\+Server}} ()
+\begin{DoxyCompactList}\small\item\em Starts TCP server in dedicated thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a2f76be007128cdfd4e9644c0d9cc9591}{process\+Incoming}} (String message)
+\begin{DoxyCompactList}\small\item\em Processes incoming messages from PIC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a66117d7522220a158e0084dc0d5ad141}{handle\+Start}} ()
+\begin{DoxyCompactList}\small\item\em Handles Start button click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_aab907634a33d930c4862c6ee2bdb2b7b}{handle\+Stop}} ()
+\begin{DoxyCompactList}\small\item\em Handles Stop button click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_af717fbac776532c9c634bd71505d60ea}{update\+UI}} (String message)
+\begin{DoxyCompactList}\small\item\em Updates primary status label. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a8cb189bb41aa6991118cbbb57bee1f9c}{handle\+Send\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Handles configuration send button click. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_a55c6ee30f6483285c7dfe2690ad60030}{update\+Connection\+State}} (boolean connected)
+\begin{DoxyCompactList}\small\item\em Updates connection status display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Label \mbox{\hyperlink{class_controller_aadef0e2e933687c83bfe73f98a1a0f5a}{status\+Label}}
+\begin{DoxyCompactList}\small\item\em Label for displaying operational status messages. \end{DoxyCompactList}\item 
+Label \mbox{\hyperlink{class_controller_a7788b094a0f736e0a8a7d53c8dfdbe83}{connection\+Status}}
+\begin{DoxyCompactList}\small\item\em Label showing current connection status to PIC. \end{DoxyCompactList}\item 
+Button \mbox{\hyperlink{class_controller_a3b5b6c1668858d9a86e785a9e08cfebd}{start\+Button}}
+\begin{DoxyCompactList}\small\item\em Button to start the simulation process. \end{DoxyCompactList}\item 
+Button \mbox{\hyperlink{class_controller_ad2c729cbaf3232c9c58ad95c5f91136e}{stop\+Button}}
+\begin{DoxyCompactList}\small\item\em Button to stop the simulation process. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a20f23743bd6fb85bf4640b68b0785743}{red\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of red color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a0957e9e23c8a14c28fec0423096aa321}{red\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of red color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a452f4b69c9be7f8a3db00afa9621bc4a}{green\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of green color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a05385df71889ab4124b4f6d91043df4b}{green\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of green color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_ac49d318a0eee441850a9dbe48be14b16}{blue\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of blue color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_aa7817e94c8c1ee70bc71b3645e75f413}{blue\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of blue color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a7b80ec4508b596172df4f8dee90eb213}{yellow\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of yellow color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a020a0a3d46b6e83efdc7edade1288446}{yellow\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of yellow color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_ac54c75c2d04f834e014582e4eb3839b3}{purple\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of purple color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a4c2de9eb8b41125312caedae13f51a8a}{purple\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of purple color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a9e052f72f4fdaf69ff065ca984fdf4f1}{orange\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of orange color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_afe6bd26c0904f62a4a694049f11dc27f}{orange\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of orange color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a01d4a0784cac14463b182557cdba943a}{black\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of black color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_accf1ad61b63da120387562280feafdeb}{black\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of black color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_ad9f3ad964f2702d945ad6c90c6d61580}{white\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of white color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_a076c01a8be30ee4929c35de9e4809786}{white\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of white color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_ae4105e22e23467656e5ee14094de0982}{brown\+Left}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting left position of brown color. \end{DoxyCompactList}\item 
+Radio\+Button \mbox{\hyperlink{class_controller_af0edf1f82fb63807b3ecc529f9c816b8}{brown\+Right}}
+\begin{DoxyCompactList}\small\item\em Radio button for selecting right position of brown color. \end{DoxyCompactList}\item 
+Circle \mbox{\hyperlink{class_controller_ac0d570dc23ed5ed680c95f0255593946}{left\+Circle}}
+\begin{DoxyCompactList}\small\item\em Visual indicator circle for left color position. \end{DoxyCompactList}\item 
+Circle \mbox{\hyperlink{class_controller_a0e12fd5b536c87cc62454f1a8662c45e}{right\+Circle}}
+\begin{DoxyCompactList}\small\item\em Visual indicator circle for right color position. \end{DoxyCompactList}\item 
+volatile boolean \mbox{\hyperlink{class_controller_ad390fbf052b17d61dd86724427c97618}{is\+Running}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating if simulation is currently running. \end{DoxyCompactList}\item 
+Socket \mbox{\hyperlink{class_controller_a6d1a51750abb482829ffc90fe0e94580}{client\+Socket}}
+\begin{DoxyCompactList}\small\item\em Client socket for PIC connection. \end{DoxyCompactList}\item 
+Print\+Writer \mbox{\hyperlink{class_controller_a0dc59dc40ae5425004b20f3ce782baa5}{out}}
+\begin{DoxyCompactList}\small\item\em Output stream to PIC. \end{DoxyCompactList}\item 
+Buffered\+Reader \mbox{\hyperlink{class_controller_a571ee4eab2f87622886ad7cf43b87197}{in}}
+\begin{DoxyCompactList}\small\item\em Input stream from PIC. \end{DoxyCompactList}\item 
+Executor\+Service \mbox{\hyperlink{class_controller_afb733f078ea24b47df9d5e700b038492}{executor\+Service}}
+\begin{DoxyCompactList}\small\item\em Executor service for managing server thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_controller}{Controller} class for managing the application GUI and communication with the microcontroller. 
+
+Handles network connections, user input, and real-\/time feedback visualization. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_controller_a4a5482b258aef6ac6849d3afe3e5d29f}\index{Controller@{Controller}!cleanupConnection@{cleanupConnection}}
+\index{cleanupConnection@{cleanupConnection}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{cleanupConnection()}{cleanupConnection()}}
+{\footnotesize\ttfamily \label{class_controller_a4a5482b258aef6ac6849d3afe3e5d29f} 
+void Controller.\+cleanup\+Connection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cleans up network resources. 
+
+Safely closes all open sockets and streams. Should be called whenever the connection needs to be terminated. \Hypertarget{class_controller_a8cb189bb41aa6991118cbbb57bee1f9c}\index{Controller@{Controller}!handleSendConfig@{handleSendConfig}}
+\index{handleSendConfig@{handleSendConfig}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{handleSendConfig()}{handleSendConfig()}}
+{\footnotesize\ttfamily \label{class_controller_a8cb189bb41aa6991118cbbb57bee1f9c} 
+void Controller.\+handle\+Send\+Config (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles configuration send button click. 
+
+Gathers all color position selections, constructs configuration message, and sends it to PIC. Validates connection state before sending. \Hypertarget{class_controller_a66117d7522220a158e0084dc0d5ad141}\index{Controller@{Controller}!handleStart@{handleStart}}
+\index{handleStart@{handleStart}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{handleStart()}{handleStart()}}
+{\footnotesize\ttfamily \label{class_controller_a66117d7522220a158e0084dc0d5ad141} 
+void Controller.\+handle\+Start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles Start button click. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Java\+FX action event (automatic parameter)\\
+\hline
+\end{DoxyParams}
+Starts the simulation, sends “\+Start” to the PIC, updates UI. \Hypertarget{class_controller_aab907634a33d930c4862c6ee2bdb2b7b}\index{Controller@{Controller}!handleStop@{handleStop}}
+\index{handleStop@{handleStop}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{handleStop()}{handleStop()}}
+{\footnotesize\ttfamily \label{class_controller_aab907634a33d930c4862c6ee2bdb2b7b} 
+void Controller.\+handle\+Stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Handles Stop button click. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & Java\+FX action event (automatic parameter)\\
+\hline
+\end{DoxyParams}
+Stops the simulation, sends “\+Stop” to the PIC, updates UI. \Hypertarget{class_controller_afcd58eb83308da339fcbbf095af0593f}\index{Controller@{Controller}!initialize@{initialize}}
+\index{initialize@{initialize}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \label{class_controller_afcd58eb83308da339fcbbf095af0593f} 
+void Controller.\+initialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes controller components. 
+
+Sets up radio button groups, default selections, and starts TCP server. Automatically called by Java\+FX after FXML loading. \Hypertarget{class_controller_a2f76be007128cdfd4e9644c0d9cc9591}\index{Controller@{Controller}!processIncoming@{processIncoming}}
+\index{processIncoming@{processIncoming}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{processIncoming()}{processIncoming()}}
+{\footnotesize\ttfamily \label{class_controller_a2f76be007128cdfd4e9644c0d9cc9591} 
+void Controller.\+process\+Incoming (\begin{DoxyParamCaption}\item[{String}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Processes incoming messages from PIC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The raw message received from microcontroller\\
+\hline
+\end{DoxyParams}
+Handles three types of messages\+:
+\begin{DoxyEnumerate}
+\item Movement commands (MOV\#side\#color)
+\item Start/\+Stop acknowledgments
+\item Generic data messages 
+\end{DoxyEnumerate}\Hypertarget{class_controller_a31dab465c2f038870b14ea542154eee1}\index{Controller@{Controller}!startServer@{startServer}}
+\index{startServer@{startServer}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{startServer()}{startServer()}}
+{\footnotesize\ttfamily \label{class_controller_a31dab465c2f038870b14ea542154eee1} 
+void Controller.\+start\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Starts TCP server in dedicated thread. 
+
+Listens on port 8084 for incoming PIC connections. Manages connection lifecycle and data reception. \Hypertarget{class_controller_a76c66daa7ab2af109aaf541c7da6b317}\index{Controller@{Controller}!stopServer@{stopServer}}
+\index{stopServer@{stopServer}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{stopServer()}{stopServer()}}
+{\footnotesize\ttfamily \label{class_controller_a76c66daa7ab2af109aaf541c7da6b317} 
+void Controller.\+stop\+Server (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Stops the server and cleans up resources. 
+
+Shuts down executor service, closes connections, and updates UI to reflect shutdown state.\+Is called on application exit. \Hypertarget{class_controller_a55c6ee30f6483285c7dfe2690ad60030}\index{Controller@{Controller}!updateConnectionState@{updateConnectionState}}
+\index{updateConnectionState@{updateConnectionState}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{updateConnectionState()}{updateConnectionState()}}
+{\footnotesize\ttfamily \label{class_controller_a55c6ee30f6483285c7dfe2690ad60030} 
+void Controller.\+update\+Connection\+State (\begin{DoxyParamCaption}\item[{boolean}]{connected}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates connection status display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em connected} & True if connection is active\\
+\hline
+\end{DoxyParams}
+Changes connection status label color and text, enables/disables toggle button based on state. \Hypertarget{class_controller_af717fbac776532c9c634bd71505d60ea}\index{Controller@{Controller}!updateUI@{updateUI}}
+\index{updateUI@{updateUI}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{updateUI()}{updateUI()}}
+{\footnotesize\ttfamily \label{class_controller_af717fbac776532c9c634bd71505d60ea} 
+void Controller.\+update\+UI (\begin{DoxyParamCaption}\item[{String}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates primary status label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The status text to display \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_controller_a0aa4ff73d355b37536593cce0dba074c}\index{Controller@{Controller}!updateVisualFeedback@{updateVisualFeedback}}
+\index{updateVisualFeedback@{updateVisualFeedback}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{updateVisualFeedback()}{updateVisualFeedback()}}
+{\footnotesize\ttfamily \label{class_controller_a0aa4ff73d355b37536593cce0dba074c} 
+void Controller.\+update\+Visual\+Feedback (\begin{DoxyParamCaption}\item[{String}]{side}{, }\item[{String}]{color}{}\end{DoxyParamCaption})}
+
+
+
+Updates visual feedback circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em side} & Which circle to update ("{}left"{} or "{}right"{}) \\
+\hline
+{\em color} & CSS color name or hex value to set \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_controller_a01d4a0784cac14463b182557cdba943a}\index{Controller@{Controller}!blackLeft@{blackLeft}}
+\index{blackLeft@{blackLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{blackLeft}{blackLeft}}
+{\footnotesize\ttfamily \label{class_controller_a01d4a0784cac14463b182557cdba943a} 
+Radio\+Button Controller.\+black\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of black color. 
+
+\Hypertarget{class_controller_accf1ad61b63da120387562280feafdeb}\index{Controller@{Controller}!blackRight@{blackRight}}
+\index{blackRight@{blackRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{blackRight}{blackRight}}
+{\footnotesize\ttfamily \label{class_controller_accf1ad61b63da120387562280feafdeb} 
+Radio\+Button Controller.\+black\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of black color. 
+
+\Hypertarget{class_controller_ac49d318a0eee441850a9dbe48be14b16}\index{Controller@{Controller}!blueLeft@{blueLeft}}
+\index{blueLeft@{blueLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{blueLeft}{blueLeft}}
+{\footnotesize\ttfamily \label{class_controller_ac49d318a0eee441850a9dbe48be14b16} 
+Radio\+Button Controller.\+blue\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of blue color. 
+
+\Hypertarget{class_controller_aa7817e94c8c1ee70bc71b3645e75f413}\index{Controller@{Controller}!blueRight@{blueRight}}
+\index{blueRight@{blueRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{blueRight}{blueRight}}
+{\footnotesize\ttfamily \label{class_controller_aa7817e94c8c1ee70bc71b3645e75f413} 
+Radio\+Button Controller.\+blue\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of blue color. 
+
+\Hypertarget{class_controller_ae4105e22e23467656e5ee14094de0982}\index{Controller@{Controller}!brownLeft@{brownLeft}}
+\index{brownLeft@{brownLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{brownLeft}{brownLeft}}
+{\footnotesize\ttfamily \label{class_controller_ae4105e22e23467656e5ee14094de0982} 
+Radio\+Button Controller.\+brown\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of brown color. 
+
+\Hypertarget{class_controller_af0edf1f82fb63807b3ecc529f9c816b8}\index{Controller@{Controller}!brownRight@{brownRight}}
+\index{brownRight@{brownRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{brownRight}{brownRight}}
+{\footnotesize\ttfamily \label{class_controller_af0edf1f82fb63807b3ecc529f9c816b8} 
+Radio\+Button Controller.\+brown\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of brown color. 
+
+\Hypertarget{class_controller_a6d1a51750abb482829ffc90fe0e94580}\index{Controller@{Controller}!clientSocket@{clientSocket}}
+\index{clientSocket@{clientSocket}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{clientSocket}{clientSocket}}
+{\footnotesize\ttfamily \label{class_controller_a6d1a51750abb482829ffc90fe0e94580} 
+Socket Controller.\+client\+Socket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Client socket for PIC connection. 
+
+\Hypertarget{class_controller_a7788b094a0f736e0a8a7d53c8dfdbe83}\index{Controller@{Controller}!connectionStatus@{connectionStatus}}
+\index{connectionStatus@{connectionStatus}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{connectionStatus}{connectionStatus}}
+{\footnotesize\ttfamily \label{class_controller_a7788b094a0f736e0a8a7d53c8dfdbe83} 
+Label Controller.\+connection\+Status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Label showing current connection status to PIC. 
+
+\Hypertarget{class_controller_afb733f078ea24b47df9d5e700b038492}\index{Controller@{Controller}!executorService@{executorService}}
+\index{executorService@{executorService}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{executorService}{executorService}}
+{\footnotesize\ttfamily \label{class_controller_afb733f078ea24b47df9d5e700b038492} 
+Executor\+Service Controller.\+executor\+Service\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Executor service for managing server thread. 
+
+\Hypertarget{class_controller_a452f4b69c9be7f8a3db00afa9621bc4a}\index{Controller@{Controller}!greenLeft@{greenLeft}}
+\index{greenLeft@{greenLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{greenLeft}{greenLeft}}
+{\footnotesize\ttfamily \label{class_controller_a452f4b69c9be7f8a3db00afa9621bc4a} 
+Radio\+Button Controller.\+green\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of green color. 
+
+\Hypertarget{class_controller_a05385df71889ab4124b4f6d91043df4b}\index{Controller@{Controller}!greenRight@{greenRight}}
+\index{greenRight@{greenRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{greenRight}{greenRight}}
+{\footnotesize\ttfamily \label{class_controller_a05385df71889ab4124b4f6d91043df4b} 
+Radio\+Button Controller.\+green\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of green color. 
+
+\Hypertarget{class_controller_a571ee4eab2f87622886ad7cf43b87197}\index{Controller@{Controller}!in@{in}}
+\index{in@{in}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{in}{in}}
+{\footnotesize\ttfamily \label{class_controller_a571ee4eab2f87622886ad7cf43b87197} 
+Buffered\+Reader Controller.\+in\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Input stream from PIC. 
+
+\Hypertarget{class_controller_ad390fbf052b17d61dd86724427c97618}\index{Controller@{Controller}!isRunning@{isRunning}}
+\index{isRunning@{isRunning}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{isRunning}{isRunning}}
+{\footnotesize\ttfamily \label{class_controller_ad390fbf052b17d61dd86724427c97618} 
+volatile boolean Controller.\+is\+Running = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Flag indicating if simulation is currently running. 
+
+\Hypertarget{class_controller_ac0d570dc23ed5ed680c95f0255593946}\index{Controller@{Controller}!leftCircle@{leftCircle}}
+\index{leftCircle@{leftCircle}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{leftCircle}{leftCircle}}
+{\footnotesize\ttfamily \label{class_controller_ac0d570dc23ed5ed680c95f0255593946} 
+Circle Controller.\+left\+Circle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Visual indicator circle for left color position. 
+
+\Hypertarget{class_controller_a9e052f72f4fdaf69ff065ca984fdf4f1}\index{Controller@{Controller}!orangeLeft@{orangeLeft}}
+\index{orangeLeft@{orangeLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{orangeLeft}{orangeLeft}}
+{\footnotesize\ttfamily \label{class_controller_a9e052f72f4fdaf69ff065ca984fdf4f1} 
+Radio\+Button Controller.\+orange\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of orange color. 
+
+\Hypertarget{class_controller_afe6bd26c0904f62a4a694049f11dc27f}\index{Controller@{Controller}!orangeRight@{orangeRight}}
+\index{orangeRight@{orangeRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{orangeRight}{orangeRight}}
+{\footnotesize\ttfamily \label{class_controller_afe6bd26c0904f62a4a694049f11dc27f} 
+Radio\+Button Controller.\+orange\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of orange color. 
+
+\Hypertarget{class_controller_a0dc59dc40ae5425004b20f3ce782baa5}\index{Controller@{Controller}!out@{out}}
+\index{out@{out}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily \label{class_controller_a0dc59dc40ae5425004b20f3ce782baa5} 
+Print\+Writer Controller.\+out\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Output stream to PIC. 
+
+\Hypertarget{class_controller_ac54c75c2d04f834e014582e4eb3839b3}\index{Controller@{Controller}!purpleLeft@{purpleLeft}}
+\index{purpleLeft@{purpleLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{purpleLeft}{purpleLeft}}
+{\footnotesize\ttfamily \label{class_controller_ac54c75c2d04f834e014582e4eb3839b3} 
+Radio\+Button Controller.\+purple\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of purple color. 
+
+\Hypertarget{class_controller_a4c2de9eb8b41125312caedae13f51a8a}\index{Controller@{Controller}!purpleRight@{purpleRight}}
+\index{purpleRight@{purpleRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{purpleRight}{purpleRight}}
+{\footnotesize\ttfamily \label{class_controller_a4c2de9eb8b41125312caedae13f51a8a} 
+Radio\+Button Controller.\+purple\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of purple color. 
+
+\Hypertarget{class_controller_a20f23743bd6fb85bf4640b68b0785743}\index{Controller@{Controller}!redLeft@{redLeft}}
+\index{redLeft@{redLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{redLeft}{redLeft}}
+{\footnotesize\ttfamily \label{class_controller_a20f23743bd6fb85bf4640b68b0785743} 
+Radio\+Button Controller.\+red\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of red color. 
+
+\Hypertarget{class_controller_a0957e9e23c8a14c28fec0423096aa321}\index{Controller@{Controller}!redRight@{redRight}}
+\index{redRight@{redRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{redRight}{redRight}}
+{\footnotesize\ttfamily \label{class_controller_a0957e9e23c8a14c28fec0423096aa321} 
+Radio\+Button Controller.\+red\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of red color. 
+
+\Hypertarget{class_controller_a0e12fd5b536c87cc62454f1a8662c45e}\index{Controller@{Controller}!rightCircle@{rightCircle}}
+\index{rightCircle@{rightCircle}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{rightCircle}{rightCircle}}
+{\footnotesize\ttfamily \label{class_controller_a0e12fd5b536c87cc62454f1a8662c45e} 
+Circle Controller.\+right\+Circle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Visual indicator circle for right color position. 
+
+\Hypertarget{class_controller_a3b5b6c1668858d9a86e785a9e08cfebd}\index{Controller@{Controller}!startButton@{startButton}}
+\index{startButton@{startButton}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{startButton}{startButton}}
+{\footnotesize\ttfamily \label{class_controller_a3b5b6c1668858d9a86e785a9e08cfebd} 
+Button Controller.\+start\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button to start the simulation process. 
+
+\Hypertarget{class_controller_aadef0e2e933687c83bfe73f98a1a0f5a}\index{Controller@{Controller}!statusLabel@{statusLabel}}
+\index{statusLabel@{statusLabel}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{statusLabel}{statusLabel}}
+{\footnotesize\ttfamily \label{class_controller_aadef0e2e933687c83bfe73f98a1a0f5a} 
+Label Controller.\+status\+Label\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Label for displaying operational status messages. 
+
+\Hypertarget{class_controller_ad2c729cbaf3232c9c58ad95c5f91136e}\index{Controller@{Controller}!stopButton@{stopButton}}
+\index{stopButton@{stopButton}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{stopButton}{stopButton}}
+{\footnotesize\ttfamily \label{class_controller_ad2c729cbaf3232c9c58ad95c5f91136e} 
+Button Controller.\+stop\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Button to stop the simulation process. 
+
+\Hypertarget{class_controller_ad9f3ad964f2702d945ad6c90c6d61580}\index{Controller@{Controller}!whiteLeft@{whiteLeft}}
+\index{whiteLeft@{whiteLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{whiteLeft}{whiteLeft}}
+{\footnotesize\ttfamily \label{class_controller_ad9f3ad964f2702d945ad6c90c6d61580} 
+Radio\+Button Controller.\+white\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of white color. 
+
+\Hypertarget{class_controller_a076c01a8be30ee4929c35de9e4809786}\index{Controller@{Controller}!whiteRight@{whiteRight}}
+\index{whiteRight@{whiteRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{whiteRight}{whiteRight}}
+{\footnotesize\ttfamily \label{class_controller_a076c01a8be30ee4929c35de9e4809786} 
+Radio\+Button Controller.\+white\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of white color. 
+
+\Hypertarget{class_controller_a7b80ec4508b596172df4f8dee90eb213}\index{Controller@{Controller}!yellowLeft@{yellowLeft}}
+\index{yellowLeft@{yellowLeft}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{yellowLeft}{yellowLeft}}
+{\footnotesize\ttfamily \label{class_controller_a7b80ec4508b596172df4f8dee90eb213} 
+Radio\+Button Controller.\+yellow\+Left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting left position of yellow color. 
+
+\Hypertarget{class_controller_a020a0a3d46b6e83efdc7edade1288446}\index{Controller@{Controller}!yellowRight@{yellowRight}}
+\index{yellowRight@{yellowRight}!Controller@{Controller}}
+\doxysubsubsection{\texorpdfstring{yellowRight}{yellowRight}}
+{\footnotesize\ttfamily \label{class_controller_a020a0a3d46b6e83efdc7edade1288446} 
+Radio\+Button Controller.\+yellow\+Right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Radio button for selecting right position of yellow color. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_controller_8java}{Controller.\+java}}\end{DoxyCompactItemize}
